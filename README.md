@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+# Auto Scale ADWC Demo
 
-You can use the [editor on GitHub](https://github.com/khatri-manit/adwdemo.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The purpose of this document is to help setting up the Autonomous data warehouse Auto scaling demo on your tenancy. This document covers systematic process to install the demo into any tenancy on oracle cloud.
 
-### Markdown
+## Demo folder structure
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### apexdemoscript
+- Adwc_Schema.sql (ADW Script)
+- Dbaas_Pdbuser.sql (pdbuser Database script)
+- Apex_Demo_Application.sql(Apex Demo application script)
+- Apex_Demo_Workspace.sql(Apex Demo Workspace script)
 
-```markdown
-Syntax highlighted code block
+### shellscripts
+- scripts(Contain Shell Scripts which run as background daemon to update load data in Dbaas Database)
 
-# Header 1
-## Header 2
-### Header 3
+### images
+- Contain all screen shot
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/khatri-manit/adwdemo.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Auto_Scale_Demo_Setup.md
+- ADWCS Scale Demo deployment steps
