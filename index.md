@@ -275,10 +275,8 @@ Note:- Please add ingress rule for your VCN to allow from public internet to 808
 5. Copy the following into the file params/ords_params.properties and replace the contents with the text below (Note:  this is the file ords_params.properties in the "params" subdirectory - a subdirectory of your current working directory).
 - db.hostname=apex (Change Hostname for your Dbaas Instance)
 - db.port=1521
-
-CUSTOMIZE **db.servicename** (Change service name for your Dbaas Instance. Run “lsnrctl status” to check for pdb1 and give same as servicename)
-
 - db.servicename=pdb1.demosubnet1.vcn1.oraclevcn.com
+  * Note: CUSTOMIZE **db.servicename** (Change service name for your Dbaas Instance. Run “lsnrctl status” to check for pdb1 and give same as servicename)
 - db.username=APEX_PUBLIC_USER
 - db.password=BEstrO0ng_#11
 - migrate.apex.rest=false
@@ -301,7 +299,7 @@ CUSTOMIZE **db.servicename** (Change service name for your Dbaas Instance. Run �
 ![](./images/ords5.png)
 6. Configure and start ORDS in stand-alone mode.  You'll be prompted for the SYS username and SYS password.
 ![](./images/ords6.png)
-kindly use the DBaaS Admin password as set as above.
+kindly use the DBaaS Admin password as set above.
 - java -Dconfig.dir=/home/oracle/ords -jar ords.war install simple –preserveParamFile
 7. Browse below URL to check whether ORDS is up and running.
 - http://<DbaaS Instance IP address<DbaaS Instance IP address>>:8080/ords
