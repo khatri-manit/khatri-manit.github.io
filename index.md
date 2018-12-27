@@ -85,11 +85,10 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 4.	Apple Safari: version 6
 
 ## ADWCS Provisioning
-1.	Login to cloud environment, Click Services to show the available services. In the list of available services, select Autonomous Data Warehouse.
+1. Login to cloud environment, Click Services to show the available services. In the list of available services, select Autonomous Data Warehouse.
 
 ![](./images/adwc1.png)
 
- 
 2.	The console for Autonomous Data Warehouse displays. You can use the List Scope drop-down menu to select a compartment; in this example the gse000#### (root) compartment is selected. Click Create Autonomous Data Warehouse.
 
 ![](./images/adwc2.png)
@@ -117,8 +116,6 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 
 ![](./images/adwc4.png)
  
-
-
 4.	The Create Autonomous Data Warehouse dialog closes. On the console, the State field indicates that the data warehouse is Provisioning. Once creation is completed, the State field changes from Provisioning to Available.
  
 ![](./images/adwc5.png)
@@ -136,12 +133,12 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
  ![](./images/adwc8.png)
 
 8.	Click Save File, and then click OK.
+
 9.	Store the zip file and make note of the password. You will use the zip file in the next step to define a SQL Developer connection to your Autonomous Data Warehouse database.
 
 10.	Open SQL Developer on your local computer. In the Connections panel, right-click Connections and select New Connection.
 
 ![](./images/adwc9.png)
-
               
 11.	The New/Select Database Connection dialog appears. Enter the following information:
 -	Connection Name - Enter the name for this cloud connection.
@@ -160,8 +157,6 @@ Status: Success displays at the left-most bottom of the New/Select Database Conn
 ## DBaaS Provisioning
 
 To create database you first need to create VCN (Virtual Cloud Network) if you have already created VCN then you can skip 1-5 steps.
-
-
 
 1.	Open the navigation menu. Under Core Infrastructure, go to Networking and click Virtual Cloud Networks.
 
