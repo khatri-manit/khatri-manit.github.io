@@ -89,8 +89,7 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 ![](./images/adwc1.png)
 2. The console for Autonomous Data Warehouse displays. You can use the List Scope drop-down menu to select a compartment; in this example the gse000#### (root) compartment is selected. Click Create Autonomous Data Warehouse.
 ![](./images/adwc2.png)
-3.In the Create Autonomous Data Warehouse dialog, enter the following information:
-
+3. In the Create Autonomous Data Warehouse dialog, enter the following information:
 - Display Name - Enter a name for the data warehouse for display purposes (eg. adwapexdemo).
 -	Database Name - Use letters and numbers only, starting with a letter (eg. adwapexdemo). Maximum length is 14 characters. (Underscores not initially supported.)
 -	CPU Core Count - Number of CPUs for your service.(Minimum to be 10)
@@ -137,53 +136,32 @@ Status: Success displays at the left-most bottom of the New/Select Database Conn
 To create database you first need to create VCN (Virtual Cloud Network) if you have already created VCN then you can skip 1-5 steps.
 
 1. Open the navigation menu. Under Core Infrastructure, go to Networking and click Virtual Cloud Networks.
-
 ![](./images/dbaas1.png) 
-
 2. Choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. If you're not sure which compartment to use, contact an administrator
-3.	Click Create Virtual Cloud Network
-
+3. Click Create Virtual Cloud Network
 ![](./images/dbaas2.png)
-
 4. Enter the following:
 -	Create in Compartment: Leave as is.
 -	Name: A friendly name for the cloud network. It doesn't have to be unique, and it cannot be changed later in the Console (but you can change it with the API). Avoid entering confidential information.
 -	Create Virtual Cloud Network Plus Related Resources: Make sure this radio button is selected.
-
 ![](./images/dbaas3.png)
-
 ![](./images/dbaas4.png)
-
 ![](./images/dbaas5.png)
- 
-5.	Click Create Virtual Cloud Network and then click close.
- 
-
+5. Click Create Virtual Cloud Network and then click close.
  ![](./images/dbaas6.png)
-
-
-6.	Generating an SSH Key Pair Using PuTTY Key Generator : When you define your Oracle DBaaS database instance, you will need to provide a secure shell (SSH) public key to establish secure connections. Perform the following steps to generate an SSH key pair using the PuTTY Key Generator on Windows.
+6. Generating an SSH Key Pair Using PuTTY Key Generator : When you define your Oracle DBaaS database instance, you will need to provide a secure shell (SSH) public key to establish secure connections. Perform the following steps to generate an SSH key pair using the PuTTY Key Generator on Windows.
 -	Find puttygen.exe in the PuTTY folder on your computer, for example, C:\Program Files (x86)\PuTTY. Double-click puttygen.exe to open it.
- 
  ![](./images/dbaas7.png)
-
 -	Accept the default key type, RSA.
 -	Set the Number of bits in a generated key to 2048 bits, if it is not already set with that value.
 -	Click Generate.
 -	Move your mouse around the blank area to generate randomness to the key.
- 
  ![](./images/dbaas8.png)
-
 -	The generated key appears under Public key for pasting into OpenSSH authorized_keys file. Copy public key in notepad we will need this while creating Dbaas provisioning.
- 
  ![](./images/dbaas9.png)
-
-
 -	To save the key in the PuTTY PPK format, click Save private key to save the private key of the key pair.
 7.	Login to cloud environment, Click Services to show the available services. In the list of available services, select Database
- 
  ![](./images/dbaas10.png)
-
 8.	The console for Database displays. You can use the List Scope drop-down menu to select a compartment; in this example the gse00014135 (root) compartment is selected. Click Launch DB System.
 9.	In the Create Launch DB System dialog, enter the following information:
 -	Display Name - Enter a name of the database.
@@ -208,64 +186,42 @@ The password must be between 12 and 30 characters long and must include at least
 - The password must not be the same password that is set less than 24 hours ago.
 -	Select Automatic Backup
 -	Click Launch DB System      
- 
- ![](./images/dbaas11.png)
- 
- ![](./images/dbaas12.png)
-
+![](./images/dbaas11.png)
+![](./images/dbaas12.png)
 ![](./images/dbaas13.png)
-
 ![](./images/dbaas14.png)
-
 ![](./images/dbaas15.png)
-
-10.	The Launch DB System dialog closes. On the console, the State field indicates that the data warehouse is Provisioning. When creation is completed, the State field changes from Provisioning to Available.
+10. The Launch DB System dialog closes. On the console, the State field indicates that the data warehouse is Provisioning. When creation is completed, the State field changes from Provisioning to Available.
  
-11.	When Provisioning is completed it will show like below.
-
+11. When Provisioning is completed it will show like below.
 ![](./images/dbaas16.png)
-  
-12.	Now login to putty with Public IP and use private key which we saved in step 6.
-13.	Login as opc and then change user to oracle as show in below screen shot.
-
-![](./images/dbaas17.png)
-
- 
+12. Now login to putty with Public IP and use private key which we saved in step 6.
+13. Login as opc and then change user to oracle as show in below screen shot.
+![](./images/dbaas17.png) 
 14.	To check ORACLE_SID and ORACLE_HOME, Type below command 
 cat /etc/oratab
-
 ![](./images/dbaas18.png)
-       
-15.	Add ORACLE_SID and ORACLE_HOME in .bash_profile
+15. Add ORACLE_SID and ORACLE_HOME in .bash_profile
 -	Log in as oracle user sudo su – oracle
 -	Edit .bash_profile. vi ~/.bash_profile
 -	Add below environment variable at the end of the file and save it.
-
 ![](./images/dbaas19.png)
-
 ![](./images/dbaas20.png)
-
 **export ORACLE_SID=ApexDB**
 **export ORACLE_HOME=/u01/app/oracle/product/12.1.0.2/dbhome_1**
 **export PATH=$ORACLE_HOME/bin:$PATH**
 -	Run source command **source ~/.bash_profile**
- 
-16.	Now login to sqlplus using below command 
+16. Now login to sqlplus using below command 
 -	**sqlplus / as sysdba**
 -	**show pdbs;**
- 
  ![](./images/dbaas21.png)
-
 17.	Once you we see pdbs. Exit from sqlplus and install APEX and ORDS in Dbaas Instance.
-
-
-
 
 ## APEX Installation
    
    Approximately time 30 Minutes.
    
-1.	Login to DbaaS Instance through Putty.
+1. Login to DbaaS Instance through Putty.
 -	Login as opc user.
 -	Change user to oracle  and got to oracle home directory as below screen shot
  
