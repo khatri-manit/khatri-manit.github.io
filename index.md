@@ -382,7 +382,7 @@ Note : Admin password should be same as adwcs instance admin password
 10.	Download ADWCS Demo shell script(scripts folder) from GitHub and copy in oracle home directory.
 ![](./images/demo13.png)
 11. Below are the environment information we will need to run our script.
--	Tenancy OCID: Login to cloud environment, Click Services to show the available services. In the list of available services, select Administration ->Tenancy Details.
+- Tenancy OCID: Login to cloud environment, Click Services to show the available services. In the list of available services, select Administration ->Tenancy Details.
 ![](./images/demo14.png)
 ![](./images/demo15.png)
 - Copy Tenancy OCID in notepad. 
@@ -392,11 +392,10 @@ Note : Admin password should be same as adwcs instance admin password
 - Copy admin OCID in notepad as AuthuserId.
 - Login to Dbaas instance and change user as oracle and run below command to generate public key PEM file to generate fingerprint for authuserid.
 https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm
- - **mkdir ~/.oci**
- - **openssl genrsa -out ~/.oci/oci_api_key.pem 2048**
- - **chmod go-rwx ~/.oci/oci_api_key.pem**
- - **openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem**       
-	You can see new finger print as below
+ - mkdir ~/.oci
+ - openssl genrsa -out ~/.oci/oci_api_key.pem 2048
+ - chmod go-rwx ~/.oci/oci_api_key.pem
+ - openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem
 - Open oci_api_key_public.pem file and copy the content 
 - Use copied content to generate finger print for admin user
 - Click the admin user for which you had taken AuthuserID and then click Add Public Key
