@@ -200,15 +200,15 @@ cat /etc/oratab
 - Log in as oracle user sudo su – oracle
 - Edit .bash_profile. vi ~/.bash_profile
 - Add below environment variable at the end of the file and save it.
-![](./images/dbaas19.png)
-![](./images/dbaas20.png)
 **export ORACLE_SID=ApexDB**
 **export ORACLE_HOME=/u01/app/oracle/product/12.1.0.2/dbhome_1**
 **export PATH=$ORACLE_HOME/bin:$PATH**
+![](./images/dbaas19.png)
+![](./images/dbaas20.png)
 - Run source command **source ~/.bash_profile**
 16. Now login to sqlplus using below command 
- **sqlplus / as sysdba**
- **show pdbs;**
+ - **sqlplus / as sysdba**
+ - **show pdbs;**
  ![](./images/dbaas22.png)
 17. Once you we see pdbs. Exit from sqlplus and install APEX and ORDS in Dbaas Instance.
 
@@ -219,7 +219,7 @@ cat /etc/oratab
 - Change user to oracle  and got to oracle home directory as below screen shot
 2. Download and unzip in oracle home directory  [APEX](http://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html)
 ![](./images/apex1.png)
-3. **cd to apex directory**
+3. cd to apex directory
 4. Start SQL*Plus and ensure you are connecting to your PDB and not to the "root" of the container database (APEX   should not be installed at all). Run Below Command to login
 - sqlplus / as sysdba
 - alter session set container=pdb1;
@@ -227,7 +227,7 @@ cat /etc/oratab
 - Wait until you see sql prompt 
 ![](./images/apex2.png)
 5. Unlock the APEX_PUBLIC_USER account and set the password.
- - **alter user apex_public_user identified by BEstrO0ng_#11 account unlock;**
+ - alter user apex_public_user identified by BEstrO0ng_#11 account unlock;
 6. Create the APEX Instance Administration user and set the password.
 - begin
 - apex_util.set_security_group_id( 10 );
@@ -265,7 +265,7 @@ cat /etc/oratab
   - "Required for    APEX."
   - service iptables save
   - iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
-  - service iptables save**
+  - service iptables save
 ![](./images/ords2.png)
 Note:- Please add ingress rule for your VCN to allow from public internet to 8080 and 1521.
 ![](./images/ords9.png)
@@ -317,7 +317,7 @@ kindly use the DBaaS Admin password as set as above.
 - Login as opc user.
 - Change user to oracle  and got to oracle home directory as below screen shot
 2.	Set Environment variable in 
-- **~./bash_profile**
+- **vi ~./bash_profile**
 - **export ORACLE_UNQNAME=DemoDB_iad1cz** (Dbaas unique name/you can check unique name at **cd 	/opt/oracle/dcs/commonstore/wallets/tde**)
 ![](./images/demo1.png)
 3. Copy ADWC wallet in oracle home directory and unzip.
