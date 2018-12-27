@@ -85,15 +85,15 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 4.	Apple Safari: version 6
 
 ## ADWCS Provisioning
-1. Login to cloud environment, Click Services to show the available services. In the list of available services, select Autonomous Data Warehouse.
+1.    Login to cloud environment, Click Services to show the available services. In the list of available services, select Autonomous Data Warehouse.
 
 ![](./images/adwc1.png)
 
-2. The console for Autonomous Data Warehouse displays. You can use the List Scope drop-down menu to select a compartment; in this example the gse000#### (root) compartment is selected. Click Create Autonomous Data Warehouse.
+2.    The console for Autonomous Data Warehouse displays. You can use the List Scope drop-down menu to select a compartment; in this example the gse000#### (root) compartment is selected. Click Create Autonomous Data Warehouse.
 
 ![](./images/adwc2.png)
 
-3. In the Create Autonomous Data Warehouse dialog, enter the following information:
+3.    In the Create Autonomous Data Warehouse dialog, enter the following information:
 
 - Display Name - Enter a name for the data warehouse for display purposes (eg. adwapexdemo).
 -	Database Name - Use letters and numbers only, starting with a letter (eg. adwapexdemo). Maximum length is 14 characters. (Underscores not initially supported.)
