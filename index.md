@@ -200,15 +200,16 @@ cat /etc/oratab
 - Log in as oracle user sudo su – oracle
 - Edit .bash_profile. vi ~/.bash_profile
 - Add below environment variable at the end of the file and save it.
--- export ORACLE_SID=ApexDB
--- export ORACLE_HOME=/u01/app/oracle/product/12.1.0.2/dbhome_1
--- export PATH=$ORACLE_HOME/bin:$PATH
+  - export ORACLE_SID=ApexDB 
+  - export ORACLE_HOME=/u01/app/oracle/product/12.1.0.2/dbhome_1
+  - export PATH=$ORACLE_HOME/bin:$PATH
 ![](./images/dbaas19.png)
 ![](./images/dbaas20.png)
-- Run source command **source ~/.bash_profile**
+- Run source command 
+  -source ~/.bash_profile
 16. Now login to sqlplus using below command 
- - **sqlplus / as sysdba**
- - **show pdbs;**
+ - sqlplus / as sysdba
+ - show pdbs;
  ![](./images/dbaas22.png)
 17. Once you we see pdbs. Exit from sqlplus and install APEX and ORDS in Dbaas Instance.
 
