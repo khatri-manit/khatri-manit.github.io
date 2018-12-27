@@ -231,18 +231,21 @@ cat /etc/oratab
 5. Unlock the APEX_PUBLIC_USER account and set the password.
 
   **alter user apex_public_user identified by BEstrO0ng_#11 account unlock;**
+  
 6. Create the APEX Instance Administration user and set the password.
 
-- **begin
+**begin
 apex_util.set_security_group_id( 10 );
 apex_util.create_user(p_user_name => 'ADMIN',p_email_address => '<Enter your Email id>',p_web_password => 'BEstrO0ng_#11',p_developer_privs =>'ADMIN' );
 apex_util.set_security_group_id( null );
 commit;
 end;
 /**
+	
 7. Run APEX REST configuration, and set the passwords of APEX_REST_PUBLIC_USER and APEX_LISTENER.
 	
   	**@apex_rest_config_core.sql ./ BEstrO0ng_#11 BEstrO0ng_#11**
+	
 8. Create a network ACE for APEX (this is used when consuming Web services or sending outbound mail).
 	
 **declare
@@ -255,6 +258,7 @@ end loop;sys.dbms_network_acl_admin.append_host_ace(host => '*',ace => xs$ace_ty
 commit;
 end;
 /**
+
 9. Exit SQL*Plus.
 	
 ## ORDS Installation in Dbaas Instance
