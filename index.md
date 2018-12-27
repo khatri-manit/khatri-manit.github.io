@@ -229,27 +229,27 @@ cat /etc/oratab
 5. Unlock the APEX_PUBLIC_USER account and set the password.
  - **alter user apex_public_user identified by BEstrO0ng_#11 account unlock;**
 6. Create the APEX Instance Administration user and set the password.
-- **begin
-apex_util.set_security_group_id( 10 );
-apex_util.create_user(p_user_name => 'ADMIN',p_email_address => 
-'<Enter your Email id>',p_web_password => 'BEstrO0ng_#11',p_developer_privs =>'ADMIN' );
-apex_util.set_security_group_id( null );
-commit;
-end;
-/**	
+- begin
+- apex_util.set_security_group_id( 10 );
+- apex_util.create_user(p_user_name => 'ADMIN',p_email_address => 
+- '<Enter your Email id>',p_web_password => 'BEstrO0ng_#11',p_developer_privs =>'ADMIN' );**
+- apex_util.set_security_group_id( null );
+- commit;
+- end;
+- /	
 7. Run APEX REST configuration, and set the passwords of APEX_REST_PUBLIC_USER and APEX_LISTENER.
- - **@apex_rest_config_core.sql ./ BEstrO0ng_#11 BEstrO0ng_#11**
+ - @apex_rest_config_core.sql ./ BEstrO0ng_#11 BEstrO0ng_#11
 8. Create a network ACE for APEX (this is used when consuming Web services or sending outbound mail).
-- **declare
-l_acl_path varchar2(4000);
-l_apex_schema varchar2(100);
-begin
-for c1 in (select schema from sys.dba_registry where comp_id = 'APEX') loop
-l_apex_schema := c1.schema;
-end loop;sys.dbms_network_acl_admin.append_host_ace(host => '*',ace => xs$ace_type(privilege_list => xs$name_list('connect'),principal_name => l_apex_schema,principal_type => xs_acl.ptype_db));
-commit;
-end;
-/**
+- declare
+- l_acl_path varchar2(4000);
+- l_apex_schema varchar2(100);
+- begin
+- for c1 in (select schema from sys.dba_registry where comp_id = 'APEX') loop
+- l_apex_schema := c1.schema;
+- end loop;sys.dbms_network_acl_admin.append_host_ace(host => '*',ace => xs$ace_type(privilege_list => xs$name_list('connect'),principal_name => l_apex_schema,principal_type => xs_acl.ptype_db));
+- commit;
+- end;
+- /
 9. Exit SQL*Plus.
 	
 ## ORDS Installation in Dbaas Instance
