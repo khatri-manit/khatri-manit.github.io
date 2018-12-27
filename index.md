@@ -317,12 +317,12 @@ kindly use the DBaaS Admin password as set as above.
 - Login as opc user.
 - Change user to oracle  and got to oracle home directory as below screen shot
 2.	Set Environment variable in 
-- **vi ~./bash_profile**
-- **export ORACLE_UNQNAME=DemoDB_iad1cz** (Dbaas unique name/you can check unique name at **cd 	/opt/oracle/dcs/commonstore/wallets/tde**)
+- vi ~./bash_profile
+- export ORACLE_UNQNAME=DemoDB_iad1cz** (Dbaas unique name/you can check unique name at **cd 	/opt/oracle/dcs/commonstore/wallets/tde**)
 ![](./images/demo1.png)
 3. Copy ADWC wallet in oracle home directory and unzip.
--   **mkdir wallet_adwc**
--    **unzip Wallet_adwapexdemo.zip -d wallet_adwc**
+-   mkdir wallet_adwc
+-   unzip Wallet_adwapexdemo.zip -d wallet_adwc
 ![](./images/demo2.png)
 4. Reset the sqlnet.ora file in the APEXDB Server environment to the following. Use WALLET_LOCATION as your ADWC unzip folder name, 
 - cd /u01/app/oracle/product/12.1.0.2/dbhome_1/network/admin 
@@ -349,21 +349,21 @@ kindly use the DBaaS Admin password as set as above.
 - adwdb1_medium = (description= (address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=xnap1jsuz2fjhb3_adwdb1_medium.adwc.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")) )
 ![](./images/demo5.png)
 6. Create password less login add below credential in ADWC wallet location(where you copied your ADWC wallet in oracle home directory) for more information go through below link [Password Less Setup](https://docs.oracle.com/cd/B19306_01/network.102/b14266/cnctslsh.htm#g1033548)
-- **mkstore -wrl . -listCredential [password  BEstrO0ng_#11]**
-- **mkstore -wrl  .  -createCredential pdb1 pdbuser  BEstrO0ng_#11 (pdbuser password in Dbaas)**
-- **mkstore -wrl  .  -createCredential adwdb1_high admin BEstrO0ng_#11(ADWC admin password)**
-- **mkstore -wrl  .  -createCredential adwdb1_low admin BEstrO0ng_#11(ADWC admin password)**
-- **mkstore -wrl  .  -createCredential adwdb1_medium admin BEstrO0ng_#11 (ADWC admin password)**
+- mkstore -wrl . -listCredential [password  BEstrO0ng_#11]
+- mkstore -wrl  .  -createCredential pdb1 pdbuser  BEstrO0ng_#11 (pdbuser password in Dbaas)
+- mkstore -wrl  .  -createCredential adwdb1_high admin BEstrO0ng_#11(ADWC admin password)
+- mkstore -wrl  .  -createCredential adwdb1_low admin BEstrO0ng_#11(ADWC admin password)
+- mkstore -wrl  .  -createCredential adwdb1_medium admin BEstrO0ng_#11 (ADWC admin password)
 ![](./images/demo6.png)
 7. Create link and check whether password less user is working.
-- **SQL> sqlplus / as sysdba**
-- **SQL> connect /@pdb1**
-- **SQL> Grant connect, resource,dba to pdbuser;**
-- **SQL> drop database link adwc;**
-- **SQL> create database link adwc connect to admin identified by "ApexDb1234##@" using 'adwdb1_medium’;**
+- SQL> sqlplus / as sysdba
+- SQL> connect /@pdb1;
+- SQL> Grant connect, resource,dba to pdbuser;
+- SQL> drop database link adwc;
+- SQL> create database link adwc connect to admin identified by "ApexDb1234##@" using 'adwdb1_medium’;
 Note : Admin password should be same as adwcs instance admin password
-- **SQL> alter system set global_names=FALSE scope=both sid='*’;**
-- **SQL> select * from dual@adwc;**
+- SQL> alter system set global_names=FALSE scope=both sid='*’;
+- SQL> select * from dual@adwc;
 ![](./images/demo7.png)
 8. Open SQL developer (version 18.3)  and connect to your Dbaas database. Please follow below step.
 - Configure SSH connection. Right click SSH Hosts and select “New SSH Host..”
