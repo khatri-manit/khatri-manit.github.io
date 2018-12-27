@@ -84,8 +84,7 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 3.	Google Chrome: version 29 and later
 4.	Apple Safari: version 6
 
-
- ## ADWCS Provisioning
+## ADWCS Provisioning
 1.	Login to cloud environment, Click Services to show the available services. In the list of available services, select Autonomous Data Warehouse.
 
 ![](./images/adwc1.png)
