@@ -209,7 +209,7 @@ cat /etc/oratab
 16. Now login to sqlplus using below command 
  **sqlplus / as sysdba**
  **show pdbs;**
- ![](./images/dbaas21.png)
+ ![](./images/dbaas22.png)
 17. Once you we see pdbs. Exit from sqlplus and install APEX and ORDS in Dbaas Instance.
 
 ## APEX Installation
