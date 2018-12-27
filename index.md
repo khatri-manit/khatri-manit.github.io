@@ -206,7 +206,7 @@ cat /etc/oratab
 ![](./images/dbaas19.png)
 ![](./images/dbaas20.png)
 - Run source command 
- * source ~/.bash_profile
+  * source ~/.bash_profile
 16. Now login to sqlplus using below command 
  - sqlplus / as sysdba
  - show pdbs;
