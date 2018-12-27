@@ -157,18 +157,8 @@ Note: Earlier versions of SQL Developer may not support this feature.
 12.	Click Test. 
 Status: Success displays at the left-most bottom of the New/Select Database Connection dialog.
 
+## DBaaS Provisioning Steps
 
-
-
-
-
-
-
-
-
-
-
- ## DBaaS Provisioning Steps
 To create database you first need to create VCN (Virtual Cloud Network) if you have already created VCN then you can skip 1-5 steps.
 
 
