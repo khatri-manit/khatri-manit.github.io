@@ -380,7 +380,7 @@ Note : Admin password should be same as adwcs instance admin password
 ![](./images/demo11.png)
 9. Open Sql developer and connect to your ADWC environment and run ADWC schema script(apexdemoscript\Adwc_Schema.sql).
 ![](./images/demo12.png)
-10.	Download ADWCS Demo shell script(scripts folder) from GitHub and copy in oracle home directory.
+10. Download ADWCS Demo shell script(scripts folder) from GitHub and copy in oracle home directory.
 ![](./images/demo13.png)
 11. Below are the environment information we will need to run our script.
 - Tenancy OCID: Login to cloud environment, Click Services to show the available services. In the list of available services, select Administration ->Tenancy Details.
