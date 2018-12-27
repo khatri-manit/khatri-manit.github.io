@@ -28,15 +28,15 @@ Approximately 120 minutes.
 
 Topics covered in this document
 
-**1.Notional Architecture of the Demo**
+**1. Notional Architecture of the Demo**
 
-**2.ADWCS Provisioning**
+**2. ADWCS Provisioning**
 
-**3.DBaaS Provisioning**
+**3. DBaaS Provisioning**
 
-**4.APEX and ORDS Installation **
+**4. APEX and ORDS Installation**
 
-**5.Auto Scaling Demo Installation **
+**5. Auto Scaling Demo Installation**
 
 ## Notional Architecture
 
@@ -56,8 +56,6 @@ Delivers high performance data warehousing straight out-of-the-box with unparall
 Scale as needed-create and expand your data warehouse’s compute and storage capacity on demand and independently of each other with no downtime. Pay only for the resources you consume.
 #### Complete
 Integrates directly with the full spectrum of business analytics, data integration and IoT services within Oracle's comprehensive range of integrated cloud solutions.
-
-
 
 #### What Do You Need?
 Before starting this instruction, you should:
@@ -284,6 +282,7 @@ Note:- Please add ingress rule for your VCN to allow from public internet to 808
 **db.hostname=apex** (Change Hostname for your Dbaas Instance)
 **db.port=1521**
 - CUSTOMIZE **db.servicename** (Change service name for your Dbaas Instance. Run “lsnrctl status” to check for pdb1 and give same as servicename)
+
 **db.servicename=pdb1.demosubnet1.vcn1.oraclevcn.com
 db.username=APEX_PUBLIC_USER
 db.password=BEstrO0ng_#11
@@ -420,12 +419,18 @@ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm
 - Login as opc user.
 - Change user to oracle  and got to oracle home directory as below screen shot
 - cd /home/oracle/scripts
+
 ![](./images/demo22.png)
+
 - Modify restapi.sh  and change tenancyId, authUserId, keyFingerprint, privateKeyPath(Give these value which we have noted in earlier step )
+
 ![](./images/demo23.png)
+
 - Modify adwc.sh file and change oci-curl (Replace Cloud host and ADWC OCID as below)
+
 ![](./images/demo24.png)
 ![](./images/demo25.png)
+
 14. Login to ORDS with user same as we have in ORDS installation.
 **http://<DbaaS intance IP Address:8080/ords**
 ![](./images/demo26.png)
