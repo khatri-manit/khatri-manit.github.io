@@ -207,8 +207,8 @@ cat /etc/oratab
 **export PATH=$ORACLE_HOME/bin:$PATH**
 - Run source command **source ~/.bash_profile**
 16. Now login to sqlplus using below command 
-- **sqlplus / as sysdba**
-- **show pdbs;**
+ **sqlplus / as sysdba**
+ **show pdbs;**
  ![](./images/dbaas21.png)
 17. Once you we see pdbs. Exit from sqlplus and install APEX and ORDS in Dbaas Instance.
 
