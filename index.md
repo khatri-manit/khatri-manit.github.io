@@ -89,11 +89,11 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 
 ![](./images/adwc1.png)
 
-2.	The console for Autonomous Data Warehouse displays. You can use the List Scope drop-down menu to select a compartment; in this example the gse000#### (root) compartment is selected. Click Create Autonomous Data Warehouse.
+2. The console for Autonomous Data Warehouse displays. You can use the List Scope drop-down menu to select a compartment; in this example the gse000#### (root) compartment is selected. Click Create Autonomous Data Warehouse.
 
 ![](./images/adwc2.png)
 
-3.	In the Create Autonomous Data Warehouse dialog, enter the following information:
+3. In the Create Autonomous Data Warehouse dialog, enter the following information:
 
 - Display Name - Enter a name for the data warehouse for display purposes (eg. adwapexdemo).
 -	Database Name - Use letters and numbers only, starting with a letter (eg. adwapexdemo). Maximum length is 14 characters. (Underscores not initially supported.)
@@ -106,8 +106,6 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 - The password must be different from the last 4 passwords used.
 - The password must not be the same password that is set less than 24 hours ago.
 
-
-
 ####	License Type - Select whether you have existing licenses or if you want to subscribe to new database software licenses and the database cloud service.
 -	Tags - (Optional) Tagging is a metadata system that allows you to organize and track resources within your tenancy. Tags are composed of keys and values which can be attached to resources. 
 -	Click Create Autonomous Data Warehouse.
@@ -116,25 +114,25 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 
 ![](./images/adwc4.png)
  
-4.	The Create Autonomous Data Warehouse dialog closes. On the console, the State field indicates that the data warehouse is Provisioning. Once creation is completed, the State field changes from Provisioning to Available.
+4. The Create Autonomous Data Warehouse dialog closes. On the console, the State field indicates that the data warehouse is Provisioning. Once creation is completed, the State field changes from Provisioning to Available.
  
 ![](./images/adwc5.png)
 
 ![](./images/adwc6.png)
 
-5.	Download the Credentials Zip File. Once you have created the data warehouse, download the credentials zip file for client access to that data warehouse. Click newly created instance
+5. Download the Credentials Zip File. Once you have created the data warehouse, download the credentials zip file for client access to that data warehouse. Click newly created instance
 
 ![](./images/adwc7.png)
 
-6.	The Database Connection dialog opens for downloading client credentials. Click Download. 
+6. The Database Connection dialog opens for downloading client credentials. Click Download. 
  
-7.	In the Download Wallet dialog, enter an encryption password (BEstrO0ng_#11) for the wallet, confirm the password, and then click Download. 
+7. In the Download Wallet dialog, enter an encryption password (BEstrO0ng_#11) for the wallet, confirm the password, and then click Download. 
  
  ![](./images/adwc8.png)
 
-8.	Click Save File, and then click OK.
+8. Click Save File, and then click OK.
 
-9.	Store the zip file and make note of the password. You will use the zip file in the next step to define a SQL Developer connection to your Autonomous Data Warehouse database.
+9. Store the zip file and make note of the password. You will use the zip file in the next step to define a SQL Developer connection to your Autonomous Data Warehouse database.
 
 10.	Open SQL Developer on your local computer. In the Connections panel, right-click Connections and select New Connection.
 
@@ -158,16 +156,16 @@ Status: Success displays at the left-most bottom of the New/Select Database Conn
 
 To create database you first need to create VCN (Virtual Cloud Network) if you have already created VCN then you can skip 1-5 steps.
 
-1.	Open the navigation menu. Under Core Infrastructure, go to Networking and click Virtual Cloud Networks.
+1. Open the navigation menu. Under Core Infrastructure, go to Networking and click Virtual Cloud Networks.
 
 ![](./images/dbaas1.png) 
 
-2.	Choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. If you're not sure which compartment to use, contact an administrator
+2. Choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. If you're not sure which compartment to use, contact an administrator
 3.	Click Create Virtual Cloud Network
 
 ![](./images/dbaas2.png)
 
-4.	Enter the following:
+4. Enter the following:
 -	Create in Compartment: Leave as is.
 -	Name: A friendly name for the cloud network. It doesn't have to be unique, and it cannot be changed later in the Console (but you can change it with the API). Avoid entering confidential information.
 -	Create Virtual Cloud Network Plus Related Resources: Make sure this radio button is selected.
