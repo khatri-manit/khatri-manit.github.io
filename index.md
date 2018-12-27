@@ -91,21 +91,19 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 ![](./images/adwc2.png)
 3. In the Create Autonomous Data Warehouse dialog, enter the following information:
 - Display Name - Enter a name for the data warehouse for display purposes (eg. adwapexdemo).
--	Database Name - Use letters and numbers only, starting with a letter (eg. adwapexdemo). Maximum length is 14 characters. (Underscores not initially supported.)
--	CPU Core Count - Number of CPUs for your service.(Minimum to be 10)
--	Storage (TB) - Select your storage capacity in terabytes. It is the actual space available to your service instance, including system-related space allocations.(Minimum to be 1 TB)
--	Administrator Credentials - Password (BEstrO0ng_#11) for ADMIN user of the service instance. The password must meet the following requirements:
+- Database Name - Use letters and numbers only, starting with a letter (eg. adwapexdemo). Maximum length is 14 characters. (Underscores not initially supported.)
+- CPU Core Count - Number of CPUs for your service.(Minimum to be 10)
+- Storage (TB) - Select your storage capacity in terabytes. It is the actual space available to your service instance, including system-related space allocations.(Minimum to be 1 TB)
+- Administrator Credentials - Password (BEstrO0ng_#11) for ADMIN user of the service instance. The password must meet the following requirements:
 - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
 - The password cannot contain the username.
 - The password cannot contain the double quote (") character.
 - The password must be different from the last 4 passwords used.
 - The password must not be the same password that is set less than 24 hours ago.
-
 ####	License Type - Select whether you have existing licenses or if you want to subscribe to new database software licenses and the database cloud service.
 -	Tags - (Optional) Tagging is a metadata system that allows you to organize and track resources within your tenancy. Tags are composed of keys and values which can be attached to resources. 
 -	Click Create Autonomous Data Warehouse.
 ![](./images/adwc3.png)
-
 ![](./images/adwc4.png)
 4. The Create Autonomous Data Warehouse dialog closes. On the console, the State field indicates that the data warehouse is Provisioning. Once creation is completed, the State field changes from Provisioning to Available.
 ![](./images/adwc5.png)
@@ -113,20 +111,19 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 5. Download the Credentials Zip File. Once you have created the data warehouse, download the credentials zip file for client access to that data warehouse. Click newly created instance
 ![](./images/adwc7.png)
 6. The Database Connection dialog opens for downloading client credentials. Click Download. 
- 
 7. In the Download Wallet dialog, enter an encryption password (BEstrO0ng_#11) for the wallet, confirm the password, and then click Download. 
- ![](./images/adwc8.png)
+![](./images/adwc8.png)
 8. Click Save File, and then click OK.
 9. Store the zip file and make note of the password. You will use the zip file in the next step to define a SQL Developer connection to your Autonomous Data Warehouse database.
 10.	Open SQL Developer on your local computer. In the Connections panel, right-click Connections and select New Connection.
 ![](./images/adwc9.png)
-11.	The New/Select Database Connection dialog appears. Enter the following information:
--	Connection Name - Enter the name for this cloud connection.
--	Username - Enter the database username. Use the default administrator database account (admin) that is provided as part of the service.
--	Password - Enter the admin user's password that you or your Autonomous Data Warehouse administrator specified when creating the service instance.
--	Connection Type - Select Cloud Wallet.
--	Configuration File - Click Browse, and select the Client Credentials zip file, downloaded from the Autonomous Data Warehouse service console by you, or given to you by your Autonomous Data Warehouse administrator.
--	Service - In the drop-down menu, service selections are prepended with database names. Select the low, medium, high, or parallel menu item for your database. These service levels map to the LOW, MEDIUM, HIGH, and PARALLEL consumer groups, which provide different levels of priority for your session.
+11. The New/Select Database Connection dialog appears. Enter the following information:
+- Connection Name - Enter the name for this cloud connection.
+- Username - Enter the database username. Use the default administrator database account (admin) that is provided as part of the service.
+- Password - Enter the admin user's password that you or your Autonomous Data Warehouse administrator specified when creating the service instance.
+- Connection Type - Select Cloud Wallet.
+- Configuration File - Click Browse, and select the Client Credentials zip file, downloaded from the Autonomous Data Warehouse service console by you, or given to you by your Autonomous Data Warehouse administrator.
+- Service - In the drop-down menu, service selections are prepended with database names. Select the low, medium, high, or parallel menu item for your database. These service levels map to the LOW, MEDIUM, HIGH, and PARALLEL consumer groups, which provide different levels of priority for your session.
 Note: Earlier versions of SQL Developer may not support this feature.             
 ![](./images/adwc10.png)
 12.	Click Test. 
