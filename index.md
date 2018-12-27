@@ -375,6 +375,7 @@ Note : Admin password should be same as adwcs instance admin password
 - Enter Name, Host(Private IP of Dbaas intsnace) and port IP
 ![](./images/demo9.png)
 - Click Ok.
+
 ![](./images/demo10.png)
 - Now create connection for Dbaas database and run Dbaas schema script(apexdemoscript\Dbaas_Pdbuser.sql)
 ![](./images/demo11.png)
