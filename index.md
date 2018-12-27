@@ -228,9 +228,9 @@ cat /etc/oratab
 - @apexins sysaux sysaux temp /i/
 - Wait until you see sql prompt 
 ![](./images/apex2.png)
-5. Unlock the APEX_PUBLIC_USER account and set the password:
-- **alter user apex_public_user identified by BEstrO0ng_#11 account unlock;**
-6. Create the APEX Instance Administration user and set the password
+5. Unlock the APEX_PUBLIC_USER account and set the password.
+  **alter user apex_public_user identified by BEstrO0ng_#11 account unlock;**
+6. Create the APEX Instance Administration user and set the password.
 - **begin
 apex_util.set_security_group_id( 10 );
 apex_util.create_user(p_user_name => 'ADMIN',p_email_address => '<Enter your Email id>',p_web_password => 'BEstrO0ng_#11',p_developer_privs =>'ADMIN' );
@@ -240,7 +240,7 @@ end;
 /**
 7. Run APEX REST configuration, and set the passwords of APEX_REST_PUBLIC_USER and APEX_LISTENER.
   	**@apex_rest_config_core.sql ./ BEstrO0ng_#11 BEstrO0ng_#11**
-8. Create a network ACE for APEX (this is used when consuming Web services or sending outbound mail)
+8. Create a network ACE for APEX (this is used when consuming Web services or sending outbound mail).
 **declare
 l_acl_path varchar2(4000);
 l_apex_schema varchar2(100);
@@ -261,18 +261,18 @@ end;
 - Change user to oracle  and got to oracle home directory as below screen shot
 2. Download and unzip ORDS in oracle home directory http://www.oracle.com/technetwork/developer-tools/rest-dataservices/downloads/index.html
 ![](./images/ords1.png)
-3. Check access rule in iptables and open port for 80 and 8080
+3. Check access rule in iptables and open port for 80 and 8080.
   **iptables -I INPUT 8 -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT -m comment --comment 
   "Required for    APEX."
   service iptables save
   iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
    service iptables save**
 ![](./images/ords2.png)
-Note:- Please add ingress rule for your VCN to allow from public internet to 8080 and 1521
+Note:- Please add ingress rule for your VCN to allow from public internet to 8080 and 1521.
 ![](./images/ords9.png)
-4. cd to the directory where you unzipped ORDS (ensure that ords.war is in your current directory)
+4. cd to the directory where you unzipped ORDS (ensure that ords.war is in your current directory).
 ![](./images/ords3.png)
-5. Copy the following into the file params/ords_params.properties and replace the contents with the text below (Note:  this is the file ords_params.properties in the "params" subdirectory - a subdirectory of your current working directory)
+5. Copy the following into the file params/ords_params.properties and replace the contents with the text below (Note:  this is the file ords_params.properties in the "params" subdirectory - a subdirectory of your current working directory).
 **db.hostname=apex** (Change Hostname for your Dbaas Instance)
 **db.port=1521**
 - CUSTOMIZE **db.servicename** (Change service name for your Dbaas Instance. Run “lsnrctl status” to check for pdb1 and give same as servicename)
@@ -297,13 +297,13 @@ user.tablespace.default=SYSAUX
 user.tablespace.temp=TEMP**
 ![](./images/ords4.png)
 ![](./images/ords5.png)
-6. Configure and start ORDS in stand-alone mode.  You'll be prompted for the SYS username and SYS password
+6. Configure and start ORDS in stand-alone mode.  You'll be prompted for the SYS username and SYS password.
 ![](./images/ords6.png)
 kindly use the DBaaS Admin password as set as above.
 **java -Dconfig.dir=/home/oracle/ords -jar ords.war install simple –preserveParamFile**
-7. Browse below URL to check whether ORDS is up and running
+7. Browse below URL to check whether ORDS is up and running.
 **http://<DbaaS Instance IP address<DbaaS Instance IP address>>:8080/ords**
-8. Use below credentials to login
+8. Use below credentials to login.
     **Workspace   : INTERNAL
 	Username    : ADMIN
 	Password     : BEstrO0ng_#11 (Admin password which you set earlier if Admin password does not work reset  password using below   step)**
