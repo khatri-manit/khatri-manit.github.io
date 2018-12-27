@@ -275,7 +275,9 @@ Note:- Please add ingress rule for your VCN to allow from public internet to 808
 5. Copy the following into the file params/ords_params.properties and replace the contents with the text below (Note:  this is the file ords_params.properties in the "params" subdirectory - a subdirectory of your current working directory).
 - db.hostname=apex (Change Hostname for your Dbaas Instance)
 - db.port=1521
+
 CUSTOMIZE **db.servicename** (Change service name for your Dbaas Instance. Run “lsnrctl status” to check for pdb1 and give same as servicename)
+
 - db.servicename=pdb1.demosubnet1.vcn1.oraclevcn.com
 - db.username=APEX_PUBLIC_USER
 - db.password=BEstrO0ng_#11
