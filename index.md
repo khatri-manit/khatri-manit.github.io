@@ -311,8 +311,8 @@ kindly use the DBaaS Admin password as set as above.
 10. **Click sign In**.
 ![](./images/ords8.png)
 	
- ### ADWC Scaling Demo Installation
- 
+### ADWC Scaling Demo Installation
+
 1. Login to Dbaas Instance through Putty.
 - Login as opc user.
 - Change user to oracle  and got to oracle home directory as below screen shot
@@ -367,11 +367,11 @@ Note : Admin password should be same as adwcs instance admin password
 ![](./images/demo7.png)
 8. Open SQL developer (version 18.3)  and connect to your Dbaas database. Please follow below step.
 - Configure SSH connection. Right click SSH Hosts and select “New SSH Host..”
--	Enter Name, Host, Username and give path to private key
+- Enter Name, Host, Username and give path to private key
 ![](./images/demo8.png)
--	Click Ok
--	Right click on newly created SSH Host and select “New Local Port Forward”
--	Enter Name, Host(Private IP of Dbaas intsnace) and port IP
+- Click Ok
+- Right click on newly created SSH Host and select “New Local Port Forward”
+- Enter Name, Host(Private IP of Dbaas intsnace) and port IP
 ![](./images/demo9.png)
 - Click Ok.
 ![](./images/demo10.png)
@@ -389,13 +389,13 @@ Note : Admin password should be same as adwcs instance admin password
 - AuthuserId : Login to cloud environment, Click Services to show the available services. In the list of available services, select Identity -> Users
 ![](./images/demo16.png)
 ![](./images/demo17.png)
--	Copy admin OCID in notepad as AuthuserId.
--	Login to Dbaas instance and change user as oracle and run below command to generate public key PEM file to generate fingerprint for authuserid.
+- Copy admin OCID in notepad as AuthuserId.
+- Login to Dbaas instance and change user as oracle and run below command to generate public key PEM file to generate fingerprint for authuserid.
 https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm
- **mkdir ~/.oci**
- **openssl genrsa -out ~/.oci/oci_api_key.pem 2048**
- **chmod go-rwx ~/.oci/oci_api_key.pem**
- **openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem**       
+ - **mkdir ~/.oci**
+ - **openssl genrsa -out ~/.oci/oci_api_key.pem 2048**
+ - **chmod go-rwx ~/.oci/oci_api_key.pem**
+ - **openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem**       
 	You can see new finger print as below
 - Open oci_api_key_public.pem file and copy the content 
 - Use copied content to generate finger print for admin user
@@ -412,37 +412,31 @@ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm
 - Login as opc user.
 - Change user to oracle  and got to oracle home directory as below screen shot
 - cd /home/oracle/scripts
-
 ![](./images/demo22.png)
-
 - Modify restapi.sh  and change tenancyId, authUserId, keyFingerprint, privateKeyPath(Give these value which we have noted in earlier step )
-
 ![](./images/demo23.png)
-
 - Modify adwc.sh file and change oci-curl (Replace Cloud host and ADWC OCID as below)
-
 ![](./images/demo24.png)
 ![](./images/demo25.png)
-
-14. Login to ORDS with user same as we have in ORDS installation.
+13. Login to ORDS with user same as we have in ORDS installation.
 **http://<DbaaS intance IP Address:8080/ords**
 ![](./images/demo26.png)
-15. Click Sign in
+14. Click Sign in
 ![](./images/demo27.png)
-16. Click Manage Workspace and select import.
+15. Click Manage Workspace and select import.
 ![](./images/demo28.png)
-17. Download workspace file from git(apexdemoscript\Apex_Demo_Workspace.sql) and import
-18. Click next and complete import on default value
-19. Once you finish you will be able to see in Existing Workspace
+16. Download workspace file from git(apexdemoscript\Apex_Demo_Workspace.sql) and import
+17. Click next and complete import on default value
+18. Once you finish you will be able to see in Existing Workspace
 ![](./images/demo29.png)
-20.	After importing workspace logout and again login with below credential.
+19.	After importing workspace logout and again login with below credential.
  **Workspace   : pdbuser, Username    : APEXDEMO ,Password     : apexdemo**
 ![](./images/demo30.png)
-21.	Click Sign In.
+20.	Click Sign In.
 ![](./images/demo31.png)
-22.	Click App Builder menu and select import.
+21.	Click App Builder menu and select import.
 ![](./images/demo32.png)
-23.	Download application script(apexdemoscript\Apex_Demo_Application.sql) and give location in Choose file. 
-24.	Click Next and finish application deployment.
-25.	Once you finish you can run application
+22.	Download application script(apexdemoscript\Apex_Demo_Application.sql) and give location in Choose file. 
+23.	Click Next and finish application deployment.
+24.	Once you finish you can run application
 ![](./images/demo33.png)
