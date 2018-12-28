@@ -333,30 +333,39 @@ Note:- Please add ingress rule for your VCN to allow from public internet to 808
   * SQLNET.CRYPTO_CHECKSUM_SERVER=REQUIRED
   * SQLNET.ENCRYPTION_TYPES_SERVER=(AES256,AES192,AES128)
   * SQLNET.CRYPTO_CHECKSUM_TYPES_SERVER=(SHA1)
-  * SQLNET.ENCRYPTION_CLIENT=REQUIRED
-  * SQLNET.CRYPTO_CHECKSUM_CLIENT=REQUIRED
   * SQLNET.ENCRYPTION_TYPES_CLIENT=(AES256,AES192,AES128)
   * SQLNET.CRYPTO_CHECKSUM_TYPES_CLIENT=(SHA1)
   * WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/oracle/wallet_adwc")))
   * SSL_SERVER_DN_MATCH=yes
   * SQLNET.WALLET_OVERRIDE=TRUE
-  * SSL_CLIENT_AUTHENTICATION = FALSE
-  * SSL_VERSION = 0
 ![](./images/demo3.png)
 ![](./images/demo4.png)
 5. Change **/u01/app/oracle/product/12.1.0.2/dbhome_1/network/admin/tnsnames.ora** file as below.  Create entry for your Dbaas PDB and copy ADWC Wallet tnsname.ora entry as below.
-- APEXDB_IAD1D5 =  (DESCRIPTION =
+- APEXDB_IAD1D5 =
+  (DESCRIPTION =
     (ADDRESS = (PROTOCOL = TCP)(HOST = apexdemo.sub1018160041.hdp.oraclevcn.com)(PORT = 1521))
-    (CONNECT_DATA =(SERVER = DEDICATED)
-      (SERVICE_NAME = APEXDB_iad1d5.sub1018160041.hdp.oraclevcn.com)))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = APEXDB_iad1d5.sub1018160041.hdp.oraclevcn.com)
+    )
+  )
 - awapexdemo_high = (description= (address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=d75u9tblitpxyls_adwapexdemo_high.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
         "CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
 - adwapexdemo_low = (description= (address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=d75u9tblitpxyls_adwapexdemo_low.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
         "CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
 - adwapexdemo_medium = (description= (address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=d75u9tblitpxyls_adwapexdemo_medium.adwc.oraclecloud.com))(security=(ssl_server_cert_dn=
         "CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
-- PDB1 =(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = apexdemo.sub1018160041.hdp.oraclevcn.com)(PORT = 1521))
-    (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = pdb1.sub1018160041.hdp.oraclevcn.com)))
+
+- PDB1 =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = apexdemo.sub1018160041.hdp.oraclevcn.com)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = pdb1.sub1018160041.hdp.oraclevcn.com)
+    )
+  )
 ![](./images/demo5.png)
 6. Create password less login add below credential in ADWC wallet location(where you copied your ADWC wallet in oracle home directory) for more information go through below link [Password Less Setup](https://docs.oracle.com/cd/B19306_01/network.102/b14266/cnctslsh.htm#g1033548)
 - mkstore -wrl . -listCredential [password  BEstrO0ng_#11]
