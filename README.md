@@ -3,7 +3,7 @@
 
 The purpose of this document is to help setting up the Autonomous data warehouse Auto scaling demo on your tenancy. This document covers systematic approach to install the demo into any tenancy on oracle cloud.
 
-you should follow the instructions available here: [Auto_Scale_Demo_Setup.md](Auto_Scale_Demo_Setup.md)
+you should follow the instructions available here: [Auto_Scale_Demo_Setup.md](Auto_Scale_ADW_Demo_Setup.md)
 
 ## Demo folder structure
 
