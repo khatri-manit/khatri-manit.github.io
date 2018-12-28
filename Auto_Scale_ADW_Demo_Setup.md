@@ -93,11 +93,11 @@ If you are using a SQL Developer version earlier than 18.2, see the documentatio
 - CPU Core Count - Number of CPUs for your service.(Minimum to be 10)
 - Storage (TB) - Select your storage capacity in terabytes. It is the actual space available to your service instance, including system-related space allocations.(Minimum to be 1 TB)
 - Administrator Credentials - Password (BEstrO0ng_#11) for ADMIN user of the service instance. The password must meet the following requirements:
-- The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
-- The password cannot contain the username.
-- The password cannot contain the double quote (") character.
-- The password must be different from the last 4 passwords used.
-- The password must not be the same password that is set less than 24 hours ago.
+  * The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
+  * The password cannot contain the username.
+  * The password cannot contain the double quote (") character.
+  * The password must be different from the last 4 passwords used.
+  * The password must not be the same password that is set less than 24 hours ago.
 ####	License Type - Select whether you have existing licenses or if you want to subscribe to new database software licenses and the database cloud service.
 - Tags - (Optional) Tagging is a metadata system that allows you to organize and track resources within your tenancy. Tags are composed of keys and values which can be attached to resources. 
 - Click Create Autonomous Data Warehouse.
@@ -131,8 +131,8 @@ Status: Success displays at the left-most bottom of the New/Select Database Conn
 
 To create database you first need to create VCN (Virtual Cloud Network) if you have already created VCN then you can skip 1-5 steps.
 
-1. Open the navigation menu. Under Core Infrastructure, go to Networking and click Virtual Cloud Networks.
-![](./images/dbaas1.png) 
+1. Open the navigation menu. Under Core Infrastructure,go to Networking and click Virtual Cloud Networks.
+- ![](./images/dbaas1.png) 
 2. Choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. If you're not sure which compartment to use, contact an administrator
 3. Click Create Virtual Cloud Network
 ![](./images/dbaas2.png)
