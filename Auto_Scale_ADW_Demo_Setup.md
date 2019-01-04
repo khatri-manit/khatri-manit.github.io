@@ -262,17 +262,17 @@ cat /etc/oratab
 2. Download and unzip ORDS in oracle home directory http://www.oracle.com/technetwork/developer-tools/rest-dataservices/downloads/index.html
 ![](./images/ords1.png)
 3. Check access rule in iptables and open port for 80 and 8080.
-  - iptables -I INPUT 8 -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT -m comment --comment 
-  - "Required for    APEX."
+4. Login as root user (sudo su -) and run below command
+  - iptables -I INPUT 8 -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT -m comment --comment "Required for    APEX."
   - service iptables save
   - iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
   - service iptables save
 ![](./images/ords2.png)
 Note:- Please add ingress rule for your VCN to allow from public internet to 8080 and 1521.
 ![](./images/ords9.png)
-4. cd to the directory where you unzipped ORDS (ensure that ords.war is in your current directory).
+5. cd to the directory where you unzipped ORDS (ensure that ords.war is in your current directory).
 ![](./images/ords3.png)
-5. Copy the following into the file params/ords_params.properties and replace the contents with the text below (Note:  this is the file ords_params.properties in the "params" subdirectory - a subdirectory of your current working directory).
+6. Copy the following into the file params/ords_params.properties and replace the contents with the text below (Note:  this is the file ords_params.properties in the "params" subdirectory - a subdirectory of your current working directory).
 - db.hostname=apex (Change Hostname for your Dbaas Instance)
 - db.port=1521
 - db.servicename=pdb1.demosubnet1.vcn1.oraclevcn.com
@@ -297,18 +297,18 @@ Note:- Please add ingress rule for your VCN to allow from public internet to 808
 - user.tablespace.temp=TEMP
 ![](./images/ords4.png)
 ![](./images/ords5.png)
-6. Configure and start ORDS in stand-alone mode.  You'll be prompted for the SYS username and SYS password.kindly use the DBaaS Admin password as set above.
+7. Configure and start ORDS in stand-alone mode.  You'll be prompted for the SYS username and SYS password.kindly use the DBaaS Admin password as set above.
 - java -Dconfig.dir=/home/oracle/ords -jar ords.war install simple –preserveParamFile
 ![](./images/ords6.png)
-7. Browse below URL to check whether ORDS is up and running.
+8. Browse below URL to check whether ORDS is up and running.
 - http://<DbaaS Instance IP address<DbaaS Instance IP address>>:8080/ords
-8. Use below credentials to login.
+9. Use below credentials to login.
     - Workspace : INTERNAL
     - Username  : ADMIN
     - Password  : BEstrO0ng_#11 (Admin password which you set earlier if Admin password does not work reset  password using below   step)
       ![](./images/ords7.png)
-9. Change your working directory to the apex directory where you unzipped the installation software. Login to sqlPlus   and run @apxchpwd. For more information refer below Url.[Oracle Community](https://community.oracle.com/thread/2332882?start=0&tstart=0) 
-10. Click sign In.
+10. Change your working directory to the apex directory where you unzipped the installation software. Login to sqlPlus   and run @apxchpwd. For more information refer below Url.[Oracle Community](https://community.oracle.com/thread/2332882?start=0&tstart=0) 
+11. Click sign In.
 ![](./images/ords8.png)
 	
 ### ADWC Scaling Demo Installation
