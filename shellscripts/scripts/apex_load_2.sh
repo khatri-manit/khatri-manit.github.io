@@ -4,7 +4,7 @@
 #: Description : Generate load on adwc
 #: Syntax :
 #: adwc_load.sh <your adwc instance name>
-#set -x
+set -x
 args=("$@")
 echo "`date '+%F %T'` Info: adwc_load_2.sh started..."
 # get number of elements

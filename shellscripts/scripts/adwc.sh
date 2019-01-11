@@ -18,6 +18,7 @@
 # mkstore -wrl . -modifyCredential adwapexdemo_low admin
 # Then edit sqlnet.ora and add this line:
 # SQLNET.WALLET_OVERRIDE = TRUE
+SCALING_UP_CPU_COUNT=1
 args=("$@")
 echo "`date '+%F %T'` Info: adwc.sh started..."
 # get number of elements
@@ -115,7 +116,9 @@ then
        #echo '-a increase -u 1 '>> /home/oracle/scripts/adwcScl.out
        #echo $adwc1 $(grep crease /home/oracle/scripts/adwcScl.out) > /home/oracle/scripts/adwcScl.sh; chmod +x /home/oracle/scripts/adwcScl.sh;
        #/home/oracle/scripts/adwcScl.sh
-       SCALE_UP_CPU_COUNT=$[ACTUAL_OCPU_COUNT+10]
+       SCALE_UP_CPU_COUNT=$[ACTUAL_OCPU_COUNT + SCALING_UP_CPU_COUNT]
+       echo $SCALE_UP_CPU_COUNT
+       echo $SCALING_UP_CPU_COUNT
        LOG_TO_DB=$(sqlplus -s /@pdb1 <<!
  set heading off
  INSERT INTO SCALING_JOB_LOG (event_date, message, event_action, from_qty, to_qty, load_qty) values (sysdate, 'Scaling up from $ACTUAL_OCPU_COUNT to $SCALE_UP_CPU_COUNT based on load=$ald', 'UP', $ACTUAL_OCPU_COUNT, $SCALE_UP_CPU_COUNT, $ald);
