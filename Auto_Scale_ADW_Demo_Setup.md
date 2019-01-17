@@ -338,11 +338,15 @@ Note:- Please add ingress rule for your VCN to allow from public internet to 808
   * SQLNET.CRYPTO_CHECKSUM_SERVER=REQUIRED
   * SQLNET.ENCRYPTION_TYPES_SERVER=(AES256,AES192,AES128)
   * SQLNET.CRYPTO_CHECKSUM_TYPES_SERVER=(SHA1)
+  * ##SQLNET.ENCRYPTION_CLIENT=REQUIRED
+  * ##SQLNET.CRYPTO_CHECKSUM_CLIENT=REQUIRED
   * SQLNET.ENCRYPTION_TYPES_CLIENT=(AES256,AES192,AES128)
   * SQLNET.CRYPTO_CHECKSUM_TYPES_CLIENT=(SHA1)
   * WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/oracle/wallet_adwc")))
   * SSL_SERVER_DN_MATCH=yes
   * SQLNET.WALLET_OVERRIDE=TRUE
+  * ##SSL_CLIENT_AUTHENTICATION = FALSE
+  * ##SSL_VERSION = 0* 
 ![](./images/demo3.png)
 ![](./images/demo4.png)
 5. Change **/u01/app/oracle/product/12.1.0.2/dbhome_1/network/admin/tnsnames.ora** file as below.  Create entry for your Dbaas PDB and copy ADWC Wallet tnsname.ora entry as below(Note: The entries in tnsnames.ora should be same as the tnsnames.ora file in the wallet zip folder obtained from ADW instance).
