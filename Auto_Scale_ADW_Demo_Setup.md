@@ -345,7 +345,7 @@ Note:- Please add ingress rule for your VCN to allow from public internet to 808
   * SQLNET.WALLET_OVERRIDE=TRUE
 ![](./images/demo3.png)
 ![](./images/demo4.png)
-5. Change **/u01/app/oracle/product/12.1.0.2/dbhome_1/network/admin/tnsnames.ora** file as below.  Create entry for your Dbaas PDB and copy ADWC Wallet tnsname.ora entry as below.
+5. Change **/u01/app/oracle/product/12.1.0.2/dbhome_1/network/admin/tnsnames.ora** file as below.  Create entry for your Dbaas PDB and copy ADWC Wallet tnsname.ora entry as below(Note: The entries in tnsnames.ora should be same as the tnsnames.ora file in the wallet zip folder obtained from ADW instance).
 - APEXDB_IAD1D5 = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST =  apexdemo.sub1018160041.hdp.oraclevcn.com)(PORT = 1521))
     (CONNECT_DATA = (SERVER = DEDICATED)
       (SERVICE_NAME = APEXDB_iad1d5.sub1018160041.hdp.oraclevcn.com)))
@@ -359,11 +359,11 @@ Note:- Please add ingress rule for your VCN to allow from public internet to 808
     (CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = pdb1.sub1018160041.hdp.oraclevcn.com)))
 ![](./images/demo5.png)
 6. Create password less login add below credential in ADWC wallet location(where you copied your ADWC wallet in oracle home directory) for more information go through below link [Password Less Setup](https://docs.oracle.com/cd/B19306_01/network.102/b14266/cnctslsh.htm#g1033548)
-- mkstore -wrl . -listCredential [password  BEstrO0ng_#11]
 - mkstore -wrl  .  -createCredential pdb1 pdbuser  BEstrO0ng_#11 (pdbuser password in Dbaas)
 - mkstore -wrl  .  -createCredential adwapexdemo_high admin BEstrO0ng_#11(ADWC admin password)
 - mkstore -wrl  .  -createCredential adwapexdemo_low admin BEstrO0ng_#11(ADWC admin password)
 - mkstore -wrl  .  -createCredential adwapexdemo_medium admin BEstrO0ng_#11 (ADWC admin password)
+- mkstore -wrl . -listCredential [password  BEstrO0ng_#11]
 ![](./images/demo6.png)
 7. Create link and check whether password less user is working.
 - SQL> sqlplus / as sysdba
@@ -377,18 +377,19 @@ Note : Admin password should be same as adwcs instance admin password
 ![](./images/demo7.png)
 8. Open SQL developer (version 18.3)  and connect to your Dbaas database. Please follow below step.
 - Configure SSH connection. Right click SSH Hosts and select “New SSH Host..”
-- Enter Name, Host, Username and give path to private key
-![](./images/demo8.png)
+![](./images/apexdemo.png)
+- Enter Name, Host (Public IP of Dbaas intsnace), Username and give path to private key(Which you use to connect Dbaas Instance)
+- ![](./images/demo8.png)
 - Click Ok
 - Right click on newly created SSH Host and select “New Local Port Forward”
 - Enter Name, Host(Private IP of Dbaas intsnace) and port IP
 ![](./images/demo9.png)
 - Click Ok.
 - ![](./images/demo10.png)
-- Now open Dbaas schema script(apexdemoscript\Dbaas_Pdbuser.sql) and go to section **change DBPROVISIONEDOCPUS** and DBPROVISIONEDOCPUS value same as number of CPU provisioned for ADW.
-- Now create connection for Dbaas database and run Dbaas schema script(apexdemoscript\Dbaas_Pdbuser.sql)
+- Now open Dbaas schema script "Dbaas_Pdbuser.sql"[apexdemoscript](https://github.com/sambhawjain/sambhawjain.github.io/tree/master/apexdemoscript) and go to section **change DBPROVISIONEDOCPUS** and DBPROVISIONEDOCPUS value same as number of CPU provisioned for ADW.
+- Now create connection for Dbaas database and run Dbaas schema scrip "Dbaas_Pdbuser.sql"[apexdemoscript](https://github.com/sambhawjain/sambhawjain.github.io/tree/master/apexdemoscript)
 ![](./images/demo11.png)
-9. Open Sql developer and connect to your ADWC environment and run ADWC schema script(apexdemoscript\Adwc_Schema.sql).
+9. Open Sql developer and connect to your ADWC environment and run ADWC schema script "Adwc_Schema.sql" [apexdemoscript](https://github.com/sambhawjain/sambhawjain.github.io/tree/master/apexdemoscript).
 ![](./images/demo12.png)
 10. Download ADWCS Demo shell script(scripts folder) from GitHub and copy in oracle home directory.
 ![](./images/demo13.png)
