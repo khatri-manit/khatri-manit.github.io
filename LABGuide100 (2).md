@@ -17,7 +17,7 @@ This lab will show you how to setup the Autonomous Data Warehouse
 ## Notional Architecture and Trial Account access
 
 ### **STEP 1**: Review Notional Architecture
-![](./images/1.PNG)
+![](./images/1.PNG)  */need to insert our architecture diagram
 ![](./images/Notional_Architecure.PNG)
 
 #### What is an Autonomous Data Warehouse?
@@ -62,7 +62,7 @@ Note : Change region name(us-ashburn-1) in above URl
 
    ![](./images/cloud4.PNG)
 
-## ADWCS and DBaaS Provisioning
+## ADWCS 
 
 ### **STEP 4**: ADWCS Provisioning
 
