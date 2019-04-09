@@ -105,7 +105,7 @@ Before starting this instruction, you should:
 ![](./images/secondsqloutput.png)
 
 
-5. In order to find the order trend by day, enter the following sql statement in the second paragraph-
+5. In order to find the order trend by day, enter the following sql statement in the third paragraph-
 
    SELECT count(order_id),order_hour_of_day from l_marketbasket group by order_hour_of_day ;
    Click run icon in the first paragraph as shown in the screenshot.
@@ -123,7 +123,7 @@ Before starting this instruction, you should:
 ![](./images/thirdsqloutput.png)
 
 
-6. In order to find the sales trend for each product in each day, enter the following sql statement in the second paragraph-
+6. In order to find the sales trend for each product in each day, enter the following sql statement in the fourth paragraph-
 
    SELECT count(order_id),order_hour_of_day from l_marketbasket group by order_hour_of_day ;
    Click run icon in the first paragraph as shown in the screenshot.
