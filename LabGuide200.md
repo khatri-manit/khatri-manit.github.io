@@ -130,9 +130,9 @@ Before starting this instruction, you should:
 
 ![](./images/fourthsql.png)
 
-   After the statement runs successfully, Oracle Machine Learning fetches the relevant data from the database and displays it in a tabular format. 
-   In order to visualize the data in graphical output, click the area-chart icon for bar graphical representation as shown in the screenshot.
-   Click on settings and drag and drop the fields as shown in the screen-shot in the respective field boxes.
+After the statement runs successfully, Oracle Machine Learning fetches the relevant data from the database and displays it in a tabular format. 
+In order to visualize the data in graphical output, click the area-chart icon for bar graphical representation as shown in the screenshot.
+Click on settings and drag and drop the fields as shown in the screen-shot in the respective field boxes.
    
 ![](./images/fourthsqlmid.png)
 
