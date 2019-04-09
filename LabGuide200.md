@@ -84,18 +84,18 @@ Before starting this instruction, you should:
 
 4. In order to find the sales trend by day, enter the following sql statement in the second paragraph-
 
-   SELECT count(products),order_hour_of_day,order_dow,order_now from l_marketbasket group by order_dow,order_now,order_hour_of_day order by order_dow; 
+    SELECT count(products),order_hour_of_day,order_dow,order_now from l_marketbasket group by order_dow,order_now,order_hour_of_day order by order_dow; 
 
-   Click run icon in the first paragraph as shown in the screenshot.
+    Click run icon in the first paragraph as shown in the screenshot.
 
 ![](./images/secondsql.png)
 
-   After the statement runs successfully, Oracle Machine Learning fetches the relevant data from the database and displays it in a tabular format. 
-   In order to visualize the data in graphical output, click the bar icon for bar graphical representation.
-   Click on settings and drag and drop the fields as shown in the screen-shot in the respective field boxes.
+    After the statement runs successfully, Oracle Machine Learning fetches the relevant data from the database and displays it in a tabular format. 
+    In order to visualize the data in graphical output, click the bar icon for bar graphical representation.
+    Click on settings and drag and drop the fields as shown in the screen-shot in the respective field boxes.
    
 ![](./images/secondsqlmid.png)
-   The output visualization graph will be obtained as shown in the screenshot below.
+    The output visualization graph will be obtained as shown in the screenshot below.
    
 ![](./images/secondsqloutput.png)
 
