@@ -52,13 +52,16 @@ Before starting this instruction, you should:
 1. Log in to your Oracle Machine Learning account.
 
 ![](./images/login.png)
-   Click Notebooks in the home page.
+
+   Click on Notebooks in the home page.
    
 ![](./images/notebook.png)
 
 
 2. In the Notebooks page, click on Create.
+
 ![](./images/createnotebook.png)
+
    Create Notebook dialog opens up. Provide the name of the notebook as RetailDemo(Analysis). The notebook opens in the Notebook editor.
 
 ![](./images/createnotebookdialogbox.png)
@@ -77,6 +80,7 @@ Before starting this instruction, you should:
    Click on settings and drag and drop the fields as shown in the screen-shot in the respective field boxes.
 
 ![](./images/firstsqlmid1.png)
+
    The output visualization graph will be obtained as shown in the screenshot below.
 
 ![](./images/firstsqloutput.png)
@@ -90,12 +94,13 @@ Before starting this instruction, you should:
 
 ![](./images/secondsql.png)
 
-    After the statement runs successfully, Oracle Machine Learning fetches the relevant data from the database and displays it in a tabular format. 
-    In order to visualize the data in graphical output, click the bar icon for bar graphical representation.
-    Click on settings and drag and drop the fields as shown in the screen-shot in the respective field boxes.
+   After the statement runs successfully, Oracle Machine Learning fetches the relevant data from the database and displays it in a tabular format. 
+   In order to visualize the data in graphical output, click the bar icon for bar graphical representation.
+   Click on settings and drag and drop the fields as shown in the screen-shot in the respective field boxes.
    
 ![](./images/secondsqlmid.png)
-    The output visualization graph will be obtained as shown in the screenshot below.
+
+   The output visualization graph will be obtained as shown in the screenshot below.
    
 ![](./images/secondsqloutput.png)
 
@@ -112,6 +117,7 @@ Before starting this instruction, you should:
    Click on settings and drag and drop the fields as shown in the screen-shot in the respective field boxes.
    
 ![](./images/thirdsqlmid.png)
+
    The output visualization graph will be obtained as shown in the screenshot below.
    
 ![](./images/thirdsqloutput.png)
