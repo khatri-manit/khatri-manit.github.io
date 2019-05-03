@@ -112,4 +112,77 @@ Note : You can Change region name in above URl
 Status: Success displays at the left-most bottom of the New/Select Database Connection dialog.
 - Click Connect to connect to your ADW instance . 
 
+## ADW Scaling 
+
+- To Scale Up or Scale Down your ADW instance, Go to your ADW instance in your console . 
+
+- Click on Scale Up/Down tab . 
+
+- ![](./images/adw17.png)
+
+- Once you click on this tab, you will be able to see below screen . 
+
+- ![](./images/adw17.png)
+
+- Increase or decrease the count as per your requirement and Click on " Update" to update the count . 
+
+
+
+## Data Loading
+
+- To load data in your ADW instance, identify the file which you want to load . 
+- In our case , we have "bigml_marketbasket" csv file in our local machine which we want to load in our ADW instance . 
+- Go to your Sql Developer (which is already connected to your ADW instance) .
+- On your right hand side , you will be able to "Tables" option . 
+- Right click on "Tables" option and Select "Import" option . 
+-  ![](./images/adw11.png)
+- 
+- Once you click on "Import" button , you will be able to see below window . 
+-  ![](./images/adw12.png)
+- 
+- Click on Browse option and Browse the file from Local machine which you want to upload to ADW instance . 
+- Give ";" in Line Terminator field and modify other fields as per your requirement . 
+- Click on "Next" button . 
+- Once you click on "Next" button, you will be able to see below screen . 
+- ![](./images/adw13.png)
+- 
+- Give desired table name and click on "Next" button . 
+- Select the columns which you want to import and click on "Next" button . 
+- ![](./images/adw14.png)
+
+- Click Next
+
+- ![](./images/adw16.png)
+
+- You will be able to see below screen. 
+
+- ![](./images/adw15.png)
+
+- Check the summary and click on "Finish" button to Finish the data load process .
+- You will be able to see loaded data in your ADW instance now  . 
+
+## Creation of ML User
+
+- To create ML(Machine Learning User), go to your ADW instance and click on "Service Console"
+
+ ![](./images/adw21.png)
+ 
+- Click on "Administration" Tab 
+
+  ![](./images/adw22.png)
+  
+- Click on "Manage Oracle ML User "
+  
+  ![](./images/adw23.png)
+  
+- Give username and password. 
+
+NOTE : We will insert image here . Not able to upload due to console server issue . 
+
+- Click on "Create" button to create ML user .
+
+
+
+
+
 
