@@ -4,18 +4,6 @@
    
    ![](./images/int.png)
 
-
-April 4, 2019
-
-Version 1.0
-
-- Arindam Ghosh
-( Solution Engineer)
-arindam.ghosh@oracle.com
-- Fabian Reginold
-( Solution Engineer)
-fabian.reginold@oracle.com
-
 ## Introduction
 
 
@@ -42,7 +30,7 @@ Topics covered in this document
 
 Oracle Machine Learning provides a notebook style application designed for advanced SQL users and provides interactive data analysis that lets you develop, document, share, and automate reports based on sophisticated analytics and data models. 
 
-#### What Do You Need?
+#### Required Artifacts
 Before starting this instruction, you should:
 -	Have successfully completed LabGuide100.
 
@@ -65,7 +53,7 @@ Before starting this instruction, you should:
 ![](./images/createnotebookdialogbox.png)
 
 
-3. In order to find the top 5 products being sold, enter the following sql statement in the first paragraph -
+3. In order to find the top 5 products being sold, enter the following sql statement in the first paragraph in the notebook editor-
 
         SELECT COUNT(PRODUCTS) AS PRODUCT_COUNT,PRODUCTS FROM l_marketbasket GROUP BY PRODUCTS ORDER BY COUNT(PRODUCTS) DESC FETCH NEXT 5 ROWS ONLY 
 
@@ -93,7 +81,7 @@ Before starting this instruction, you should:
 
 
 4. Same as step 3 and step 4. 
-   Enter the following sql statement in the second paragraph-
+   Enter the following sql statement in the second paragraph in the notebook editor-
 
         SELECT COUNT(PRODUCTS),ORDER_HOUR_OF_DAY,ORDER_DOW,ORDER_NOW FROM L_MARKETBASKET GROUP BY ORDER_DOW,ORDER_NOW,ORDER_HOUR_OF_DAY ORDER BY ORDER_DOW; 
 
@@ -119,7 +107,7 @@ Before starting this instruction, you should:
 
 
 5. Same as step 3 and step 4. 
-   Enter the following sql statement in the next paragraph. 
+   Enter the following sql statement in the next paragraph in the notebook editor. 
 
         SELECT COUNT(ORDER_ID),ORDER_HOUR_OF_DAY FROM L_MARKETBASKET GROUP BY ORDER_HOUR_OF_DAY ;
    Click run icon in the first paragraph as shown in the screenshot.
@@ -144,7 +132,7 @@ Before starting this instruction, you should:
 
 
 6. Same as step 3 and step 4. 
-   In order to find the sales trend for each product in each day, enter the following sql statement in the fourth paragraph-
+   In order to find the sales trend for each product in each day, enter the following sql statement in the fourth paragraph in the notebook editor-
 
         SELECT COUNT(PRODUCTS) AS NO,ORDER_NOW,PRODUCTS FROM L_MARKETBASKET WHERE PRODUCTS IN('BANANA','ORGANIC GARLIC','LIME','SEEDLESS RED GRAPES', 'ORGANIC LEMON') GROUP BY ORDER_NOW,PRODUCTS ORDER BY NO DESC FETCH NEXT 100 ROWS ONLY ;
    Click run icon in the first paragraph as shown in the screenshot.
