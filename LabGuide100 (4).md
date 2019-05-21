@@ -3,50 +3,69 @@
 
 ## Introduction
 
-This lab will show you how to setup the Autonomous Data Warehouse
+ Machine learning-infused operational analytics is the key to success in next generation business processes.  The industries with abundant data are leading the way.  Executives need to learn about these breakthroughs in order to make to achieve operational excellence.  Oracle ADW is the disruptive technology that is making this happen.  In this session, we will demonstrate three targeted solutions:  Intelligent Pricing & Customer Lifetime Value for Energy sector, Customer Segmentation & Churn Prediction for Telcos and a novel Dynamic Pricing Model for Retail Stores.  This session will address business processes and the supporting technologies, so invite your data scientists, DBAs, and BI experts.
+ 
+ This lab will show you how to setup the Autonomous Data Warehouse with ML users.
+
+#### What is an Autonomous Data Warehouse?
+
+Oracle Autonomous Data Warehouse is built around the market leading Oracle database and comes with fully automated and fully managed  data warehouse specific features that deliver outstanding query performance.
 
 ## Objectives
 
 - Get comfortable with Oracle's public cloud services
-
 - ADW Provisioning
-
 - ADW Connectivity
+- Loading Data in ADW instance . 
+- Creation of ML (Machine Learning user )
 
 
-## Notional Architecture and Trial Account access
+## Trial Account access
 
-### **STEP 1**: Review Notional Architecture
-![](./images/adw1.PNG)
-![](./images/Notional_Architecure.PNG)
+Get your trial account in simple steps :
 
-#### What is an Autonomous Data Warehouse?
+1. Go to <https://cloud.oracle.com> . 
+2. Click on "Try for Free" option on the top right of your screen .
 
-Oracle Autonomous Data Warehouse is built around the market leading Oracle database and comes with fully automated data warehouse specific features that deliver outstanding query performance.  This environment is delivered as a fully managed cloud service running on optimized high-end Oracle hardware systems.  You don’t need to spend time thinking about how you should store your data, when or how to back it up or how to tune your queries.  
+   ![](./images/adw30.png)
+3. This will route you to below screen .
+    
+   ![](./images/adw31.png)
 
-We take care of everything for you.
-
-Click here to <a href="https://www.youtube.com/watch?v=tZMZODoi2xw" target="blank">watch our short video</a> that explains the key features in Oracle's Autonomous Data Warehouse.
-
-Oracle’s Autonomous Data Warehouse is the perfect quick-start service for fast data loading and sophisticated data reporting and analysis.  Oracle manages everything for you so you can focus on your data.
+4. Give your Email Address and Country and Click on Next button . 
+5. Give the required details and click on "Verify Mobile number" . 
+   
+    ![](./images/adw34.png)
+    ![](./images/adw33.png)
+ 
+ 6. You will get a security code on your mobile number to verify your 
+    mobile number. 
+    
+    ![](./images/adw35.png)
+    
+ 7. Verify your security code click on "Verify Code" button . 
+ 8. You will be able to see below screen now . 
+ 
+    ![](./images/adw36.png)
+    
+ 9. Add your card details for 30 days of free trial and you will ready                         with your account . You will get your account details with password in separate mail . 
+   
 
 Read on to begin your Getting Started journey with Oracle Autonomous Data Warehouse.
 
 
-### **STEP 2**: Lab Prerequisites – Required Software
+### **STEP 1**: Lab Prerequisites – Required Software
 - Oracle Cloud Account
-- Sql Developer
+- Sql Developer 
 
-<a href="https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary" target="blank">**Cloud Customer Connect**</a> Forum for Autonomous Data Warehouse
-If you have a question during this workshop then use the Autonomous Data Warehouse Forum to post questions, connect with experts, and share your thoughts and ideas about Oracle Autonomous Data Warehouse.
-
-Are you are completely new to the <a href="https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary" target="blank">**Cloud Customer Connect**</a> forums? Visit our  <a href="https://cloudcustomerconnect.oracle.com/pages/1f00b02b84" target="blank">Getting Started forum page</a> to learn how to best leverage community resources.
+  **Oracle SQL Developer** is an Integrated development environment for working with SQL in Oracle databases. Oracle Corporation provides this product free . You can download this from below link :
+  <https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html>
 
 
-### **STEP 3**: Access the Cloud
+### **STEP 2**: Access the Cloud
 
-- Navigate to https://console.us-ashburn-1.oraclecloud.com
-Note : You can Change region name in above URl
+- Navigate to https://cloud.oracle.com
+
 
 - Enter your tenancy name and click continue.
 
@@ -61,11 +80,12 @@ Note : You can Change region name in above URl
 
    ![](./images/cloud4.PNG)
 
-## ADW Provisioning
 
-### **STEP 4**: ADW Provisioning
+### **STEP 3**: ADW Provisioning
 
-- Login to cloud environment,Click on the Menu Icon to show the available services. In the list of available services, select Autonomous Data Warehouse.
+- Click on the Menu Icon to show the available services. In the list of available services, select Autonomous Data Warehouse.
+
+![](./images/adw40.png)
 
 - The console for Autonomous Data Warehouse displays. You can use the List Scope drop-down menu to select a compartment. Click Create Autonomous Data Warehouse.
 
@@ -112,56 +132,60 @@ Note : You can Change region name in above URl
 Status: Success displays at the left-most bottom of the New/Select Database Connection dialog.
 - Click Connect to connect to your ADW instance . 
 
-## ADW Scaling 
+### **STEP 4** : ADW Scaling 
 
 - To Scale Up or Scale Down your ADW instance, Go to your ADW instance in your console . 
 
 - Click on Scale Up/Down tab . 
 
-- ![](./images/adw17.png)
+ ![](./images/adw17.png)
 
 - Once you click on this tab, you will be able to see below screen . 
 
-- ![](./images/adw17.png)
+ ![](./images/adw18.png)
 
 - Increase or decrease the count as per your requirement and Click on " Update" to update the count . 
 
 
 
-## Data Loading
+### **STEP 5** :  Data Loading
 
 - To load data in your ADW instance, identify the file which you want to load . 
 - In our case , we have "bigml_marketbasket" csv file in our local machine which we want to load in our ADW instance . 
 - Go to your Sql Developer (which is already connected to your ADW instance) .
 - On your right hand side , you will be able to "Tables" option . 
 - Right click on "Tables" option and Select "Import" option . 
--  ![](./images/adw11.png)
-- 
+
+![](./images/adw11.png)
+
 - Once you click on "Import" button , you will be able to see below window . 
--  ![](./images/adw12.png)
-- 
+
+ ![](./images/adw12.png)
+
 - Click on Browse option and Browse the file from Local machine which you want to upload to ADW instance . 
 - Give ";" in Line Terminator field and modify other fields as per your requirement . 
 - Click on "Next" button . 
 - Once you click on "Next" button, you will be able to see below screen . 
-- ![](./images/adw13.png)
-- 
+
+
+ ![](./images/adw13.png)
+
 - Give desired table name and click on "Next" button . 
 - Select the columns which you want to import and click on "Next" button . 
-- ![](./images/adw14.png)
+ ![](./images/adw14.png)
 
 - Click Next
 
-- ![](./images/adw16.png)
+ ![](./images/adw16.png)
 
 - You will be able to see below screen. 
 
-- ![](./images/adw15.png)
+ ![](./images/adw15.png)
 
 - Check the summary and click on "Finish" button to Finish the data load process .
 - You will be able to see loaded data in your ADW instance now  . 
 
-## Creation of ML User
+### **STEP 6** : Creation of ML User
 
 - To create ML(Machine Learning User), go to your ADW instance and click on "Service Console"
 
@@ -175,11 +199,16 @@ Status: Success displays at the left-most bottom of the New/Select Database Conn
   
   ![](./images/adw23.png)
   
-- Give username and password. 
+- This will route you to the Machine Learning console and you will be able to see list of ML users created (if any) for your ADW instance . 
+- Click on "Create" button to create new ML user . 
 
-NOTE : We will insert image here . Not able to upload due to console server issue . 
+  ![](./images/adw41.png)
 
-- Click on "Create" button to create ML user .
+- Give Username , Email Address  and password.
+
+![](./images/adw43.png)
+
+- Click on "Create" button on the top right side of your console to create ML user .
 
 
 
