@@ -27,16 +27,16 @@ Get your trial account in simple steps :
 1. Go to <https://cloud.oracle.com> . 
 2. Click on "Try for Free" option on the top right of your screen .
 
-   ![](./images/adw30.png)
+   ![](./images/adw30.PNG)
 3. This will route you to below screen .
     
-   ![](./images/adw31.png)
+   ![](./images/adw31.PNG)
 
 4. Give your Email Address and Country and Click on Next button . 
 5. Give the required details and click on "Verify Mobile number" . 
    
-    ![](./images/adw34.png)
-    ![](./images/adw33.png)
+    ![](./images/adw34.PNG)
+    ![](./images/adw33.PNG)
  
  6. You will get a security code on your mobile number to verify your 
     mobile number. 
