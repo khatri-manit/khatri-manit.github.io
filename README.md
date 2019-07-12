@@ -1,9 +1,8 @@
-# Oracle Machine Learning with Autonomous Datawarehouse Cloud-Retail Workshop
+# Oracle Machine Learning with Autonomous Datawarehouse Cloud- Workshop
 
 
 The purpose of this document is to systematically analyze the data present in autonomous data warehouse cloud and run the in-database machine learning algorithms in autonomous data warehouse Cloud.
 
-you should follow the instructions available here: [Auto_Scale_ADW_Demo_Setup.md](Retail_Demo .md)
 
 ## Demo folder structure
 
@@ -12,10 +11,10 @@ you should follow the instructions available here: [Auto_Scale_ADW_Demo_Setup.md
 - Retail Demo Machine Learning (Oracle Machine Learning)
 
 ### Zeplin Notebook
-- Zeplin notebooks which can be uploaded into ADWC to analyze and predict insights.
+- Zeplin notebooks are pre-built notebooks embedded in ADW to analyze and predict insights.
 
-### Images
-- Contain all screen shots
+### Lab100.md
+- Getting Started with ADW
 
-### Auto_Scale_Demo_Setup.md
+### Lab200.md
 - Oracle Machine Learning execution steps

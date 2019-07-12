@@ -1,0 +1,27 @@
+{
+    "workshop": {
+        "title": "Accelerated Data Driven analysis for the retail industry",
+        "description": "This workshop will show you how to get started with your retail use cases using Oracle Machine Learning notebooks",
+        "labs": [
+            {
+                "number": "0",
+                "filename": "README.md",
+                "title": "Read Me First",
+                "description": "Oracle Machine Learning in Retail Industry with Autonomous Data Warehouse- Workshop"
+            },
+            {
+                "number": "1",
+                "filename": "LabGuide100.md",
+                "title": "Lab 100:Setting up the enviornments",
+                "description": "Autonomous Data Warehouse setting up all the environments required to run Oracle Machine Learning Notebooks"
+            },
+			{
+                "number": "2",
+                "filename": "LabGuide200.md",
+                "title": "Lab 200:Retail use case using OML",
+                "description": "Analyze and run machine learning algorithms with oracle machine learning notebooks"
+            }
+
+        ]
+    }
+}

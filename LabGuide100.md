@@ -1,23 +1,28 @@
-
 # Lab 100
 
 ## Introduction
 
- Machine learning-infused operational analytics is the key to success in next generation business processes.  The industries with abundant data are leading the way.  Executives need to learn about these breakthroughs in order to make to achieve operational excellence.  Oracle ADW is the disruptive technology that is making this happen.  In this session, we will demonstrate three targeted solutions:  Intelligent Pricing & Customer Lifetime Value for Energy sector, Customer Segmentation & Churn Prediction for Telcos and a novel Dynamic Pricing Model for Retail Stores.  This session will address business processes and the supporting technologies, so invite your data scientists, DBAs, and BI experts.
+ Machine learning-infused operational analytics is the key to success in next generation business processes.  The industries with abundant data are leading the way.  Executives need to learn about these breakthroughs in order to make to achieve operational excellence.  Oracle Autonomous Data Warehouse is the disruptive technology that is making this happen.  In this session, we will demonstrate three targeted solutions:  Intelligent Pricing & Customer Lifetime Value for Energy sector, Customer Segmentation & Churn Prediction for Telecoms and a novel Dynamic Pricing Model for Retail Stores.  This session will address business processes and the supporting technologies, so invite your data scientists, DBAs, and BI experts.
  
  This lab will show you how to setup the Autonomous Data Warehouse with ML users.
 
 #### What is an Autonomous Data Warehouse?
 
-Oracle Autonomous Data Warehouse is built around the market leading Oracle database and comes with fully automated and fully managed  data warehouse specific features that deliver outstanding query performance.
+Oracle Autonomous Data Warehouse provides an easy-to-use, fully autonomous data warehouse that scales elastically, delivers fast query performance and requires no database administration. It is designed to support all standard SQL and business intelligence (BI) tools, and provides all of the performance of the market-leading Oracle Database in an environment that is tuned and optimized for data warehouse workloads.
+
+As a service Autonomous Data Warehouse does not require database administration. With Autonomous Data Warehouse you do not need to configure or manage any hardware, or install any software. Autonomous Data Warehouse handles creating the data warehouse, backing up the database, patching and upgrading the database, and growing or shrinking the database.
+
+Additionally, Autonomous Data Warehouse does not require any tuning. Autonomous Data Warehouse is designed as a "load and go" service: you start the service, define tables, load data, and then run queries. When you use Autonomous Data Warehouse, no tuning is necessary. You do not need to consider any details about parallelism, partitioning, indexing, or compression. The service automatically configures the database for high-performance queries.
+
+Autonomous Data Warehouse is built upon Oracle Database, so that the applications and tools that support Oracle Database also support Autonomous Data Warehouse. These tools and applications connect to Autonomous Data Warehouse using standard SQL*Net connections.
 
 ## Objectives
 
-- Get comfortable with Oracle's public cloud services
-- ADW Provisioning
-- ADW Connectivity
-- Loading Data in ADW instance . 
-- Creation of ML (Machine Learning user )
+- Get comfortable with Oracle's public cloud services.
+- Auto Data Warehouse Provisioning.
+- Auto Data Warehouse Connectivity.
+- Loading Data in Auto Dara Warehouse instance. 
+- Creation of ML (Machine Learning user).
 
 
 ## Trial Account access
@@ -28,6 +33,7 @@ Get your trial account in simple steps :
 2. Click on "Try for Free" option on the top right of your screen .
 
    ![](./images/adw30.PNG)
+   
 3. This will route you to below screen .
     
    ![](./images/adw31.PNG)
@@ -67,14 +73,17 @@ Read on to begin your Getting Started journey with Oracle Autonomous Data Wareho
 - Navigate to https://cloud.oracle.com
 
 
-- Enter your tenancy name and click continue.
+- Click Sign In in the upper right hand corner of the browser and on the next screen enter you Cloud Account Name.
 
-   ![](./images/adw2.PNG)
+   ![](./images/signin1.PNG)
 
-- Click Next to go in login page and then enter username/password
+- Enter your "Account Name" which you have received in mail and click "Next".
 
-   ![](./images/adw3.PNG)
+ ![](./images/signin2.PNG)
 
+- Enter "User Name" and "Password" received in the mail & click "Sign In"
+
+   ![](./images/signin3.PNG)
 
 - Click top left menu to see all available service.
 
@@ -96,6 +105,9 @@ Read on to begin your Getting Started journey with Oracle Autonomous Data Wareho
   * Database Name - Use letters and numbers only, starting with a letter (eg. adwapexdemo). Maximum length is 14 characters. (Underscores not initially supported.)
   * CPU Core Count - Number of CPUs for your service.(Minimum to be 5)
   * Storage (TB) - Select your storage capacity in terabytes. It is the actual space available to your service instance, including system-related space allocations.(Minimum to be 1 TB)
+  
+   ![](./images/adw5.PNG)
+  
   * Administrator Credentials - Password for ADMIN user of the service instance. The password must meet the following requirements:
   * The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
       * The password cannot contain the username.
@@ -104,10 +116,13 @@ Read on to begin your Getting Started journey with Oracle Autonomous Data Wareho
       * The password must not be the same password that is set less than 24 hours ago.
   * License Type - Select whether you have existing licenses or if you want to subscribe to new database software licenses and the database cloud service.
   * Tags - (Optional) Tagging is a metadata system that allows you to organize and track resources within your tenancy. Tags are composed of keys and values which can be attached to resources.
+
+   ![](./images/adw6.PNG)
+  
   * Click Create Autonomous Data Warehouse.
-  ![](./images/adw5.PNG)
-  ![](./images/adw6.PNG)
-  ![](./images/adw7.PNG)
+  
+   ![](./images/adw7.PNG)
+  
 - The Create Autonomous Data Warehouse dialog closes. On the console, the State field indicates that the data warehouse is Provisioning. Once creation is completed, the State field changes from Provisioning to Available.
  ![](./images/adw8.PNG)
  ![](./images/adw9.PNG)
@@ -117,7 +132,7 @@ Read on to begin your Getting Started journey with Oracle Autonomous Data Wareho
  ![](./images/adwc8.png)
 - Click Save File, and then click OK.
 - Store the zip file and make note of the password. You will use the zip file in the next step to define a SQL Developer connection to your Autonomous Data Warehouse database.
--	Open SQL Developer on your local computer. In the Connections panel, right-click Connections and select New Connection.
+-  Open SQL Developer on your local computer. In the Connections panel, right-click Connections and select New Connection.
  ![](./images/adwc9.png)
 - The New/Select Database Connection dialog appears. Enter the following information.
   * Connection Name - Enter the name for this cloud connection.
@@ -127,10 +142,14 @@ Read on to begin your Getting Started journey with Oracle Autonomous Data Wareho
   * Configuration File - Click Browse, and select the Client Credentials zip file, downloaded from the Autonomous Data Warehouse service console by you, or given to you by your Autonomous Data Warehouse administrator.
   * Service - In the drop-down menu, service selections are prepended with database names. Select the low, medium, high, or parallel menu item for your database. These service levels map to the LOW, MEDIUM, HIGH, and PARALLEL consumer groups, which provide different levels of priority for your session.
  Note: Earlier versions of SQL Developer may not support this feature.             
- ![](./images/adw10.PNG)
--	Click Test.
+ ![](./images/adw10.PNG) 
+-  Click Test.
+ ![](./images/adw101.PNG)
 Status: Success displays at the left-most bottom of the New/Select Database Connection dialog.
 - Click Connect to connect to your ADW instance . 
+ ![](./images/adw102.PNG) 
+Once the connection is established, a new SQL Workspace will open.
+ ![](./images/adw104.PNG)
 
 ### **STEP 4** : ADW Scaling 
 
@@ -151,38 +170,44 @@ Status: Success displays at the left-most bottom of the New/Select Database Conn
 ### **STEP 5** :  Data Loading
 
 - To load data in your ADW instance, identify the file which you want to load . 
-- In our case , we have "bigml_marketbasket" csv file in our local machine which we want to load in our ADW instance . 
+- In our case , we require some data file in our local machine which we want to load in our ADW instance .
+- So download the data zip file from the below link:
+<https://oracle.github.io/learning-library/workshops/journey4-adwc/files/files.zip>
+Unzip the zip file in your local machine.
 - Go to your Sql Developer (which is already connected to your ADW instance) .
 - On your right hand side , you will be able to "Tables" option . 
+  ![](./images/dataloading.png)
+  ![](./images/dataloading1.png)  
 - Right click on "Tables" option and Select "Import" option . 
-
-![](./images/adw11.png)
-
+  ![](./images/adw11.png)
 - Once you click on "Import" button , you will be able to see below window . 
-
- ![](./images/adw12.PNG)
+ ![](./images/channels.PNG)
 
 - Click on Browse option and Browse the file from Local machine which you want to upload to ADW instance . 
-- Give ";" in Line Terminator field and modify other fields as per your requirement . 
 - Click on "Next" button . 
 - Once you click on "Next" button, you will be able to see below screen . 
 
+ ![](./images/channels1.PNG)
 
- ![](./images/adw13.PNG)
+- Give the table name as "Channels" and click on "Next" button . 
+- Once you click "Next" button, you will be able to see below screen . 
 
-- Give desired table name and click on "Next" button . 
-- Select the columns which you want to import and click on "Next" button . 
- ![](./images/adw14.PNG)
+ ![](./images/channels2.PNG)
 
 - Click Next
 
- ![](./images/adw16.PNG)
+ ![](./images/channels3.PNG)
 
-- You will be able to see below screen. 
+- You will be able to see below screen.
+- Click Next
 
- ![](./images/adw15.PNG)
+ ![](./images/channels4.PNG)
 
 - Check the summary and click on "Finish" button to Finish the data load process .
+
+ ![](./images/channels5.PNG)
+
+- Click on "OK". 
 - You will be able to see loaded data in your ADW instance now  . 
 
 ### **STEP 6** : Creation of ML User
