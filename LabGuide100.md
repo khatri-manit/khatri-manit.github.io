@@ -6,7 +6,7 @@
  
  This lab will show you how to setup the Autonomous Data Warehouse with ML users.
 
-#### What is an Autonomous Data Warehouse?
+####   What is an Autonomous Data Warehouse?
 
 Oracle Autonomous Data Warehouse provides an easy-to-use, fully autonomous data warehouse that scales elastically, delivers fast query performance and requires no database administration. It is designed to support all standard SQL and business intelligence (BI) tools, and provides all of the performance of the market-leading Oracle Database in an environment that is tuned and optimized for data warehouse workloads.
 
@@ -29,32 +29,32 @@ Autonomous Data Warehouse is built upon Oracle Database, so that the application
 
 Get your trial account in simple steps :
 
-1. Go to <https://cloud.oracle.com> . 
-2. Click on "Try for Free" option on the top right of your screen .
+- Go to <https://cloud.oracle.com>. 
+- Click on "Try for Free" option on the top right of your screen .
 
    ![](./images/adw30.PNG)
    
-3. This will route you to below screen .
+- This will route you to below screen .
     
    ![](./images/adw31.PNG)
 
-4. Give your Email Address and Country and Click on Next button . 
-5. Give the required details and click on "Verify Mobile number" . 
+- Give your Email Address and Country and Click on Next button . 
+- Give the required details and click on "Verify Mobile number" . 
    
-    ![](./images/adw34.PNG)
-    ![](./images/adw33.PNG)
+   ![](./images/adw34.PNG)
+   ![](./images/adw33.PNG)
  
- 6. You will get a security code on your mobile number to verify your 
-    mobile number. 
+- You will get a security code on your mobile number to verify your 
+  mobile number. 
     
-    ![](./images/adw35.PNG)
+   ![](./images/adw35.PNG)
     
- 7. Verify your security code click on "Verify Code" button . 
- 8. You will be able to see below screen now . 
+- Verify your security code click on "Verify Code" button . 
+- You will be able to see below screen now . 
  
-    ![](./images/adw36.PNG)
+   ![](./images/adw36.PNG)
     
- 9. Add your card details for 30 days of free trial and you will ready                         with your account . You will get your account details with password in separate mail . 
+- Add your card details for 30 days of free trial and you will ready                             with your account . You will get your account details with password in separate mail . 
    
 
 Read on to begin your Getting Started journey with Oracle Autonomous Data Warehouse.
@@ -71,15 +71,13 @@ Read on to begin your Getting Started journey with Oracle Autonomous Data Wareho
 ### **STEP 2**: Access the Cloud
 
 - Navigate to https://cloud.oracle.com
-
-
 - Click Sign In in the upper right hand corner of the browser and on the next screen enter you Cloud Account Name.
 
    ![](./images/signin1.PNG)
 
 - Enter your "Account Name" which you have received in mail and click "Next".
 
- ![](./images/signin2.PNG)
+   ![](./images/signin2.PNG)
 
 - Enter "User Name" and "Password" received in the mail & click "Sign In"
 
@@ -94,11 +92,11 @@ Read on to begin your Getting Started journey with Oracle Autonomous Data Wareho
 
 - Click on the Menu Icon to show the available services. In the list of available services, select Autonomous Data Warehouse.
 
-![](./images/adw40.png)
+   ![](./images/adw40.png)
 
 - The console for Autonomous Data Warehouse displays. You can use the List Scope drop-down menu to select a compartment. Click Create Autonomous Data Warehouse.
 
-  ![](./images/adw4.PNG)
+   ![](./images/adw4.PNG)
 
 - In the Create Autonomous Data Warehouse dialog, enter the following information.
   * Display Name - Enter a name for the data warehouse for display   (eg. adwapexdemo).
@@ -124,16 +122,22 @@ Read on to begin your Getting Started journey with Oracle Autonomous Data Wareho
    ![](./images/adw7.PNG)
   
 - The Create Autonomous Data Warehouse dialog closes. On the console, the State field indicates that the data warehouse is Provisioning. Once creation is completed, the State field changes from Provisioning to Available.
- ![](./images/adw8.PNG)
- ![](./images/adw9.PNG)
+
+   ![](./images/adw8.PNG)
+   ![](./images/adw9.PNG)
+   
 - Download the Credentials Zip File. Once you have created the data warehouse, download the credentials zip file for client access to that data warehouse. Click newly created instance and then select DB Connection.
 - The Database Connection dialog opens for downloading client credentials. Click Download.
 - In the Download Wallet dialog, enter an encryption password (BEstrO0ng_#11) for the wallet, confirm the password, and then click Download.
- ![](./images/adwc8.png)
+
+   ![](./images/adwc8.png)
+   
 - Click Save File, and then click OK.
 - Store the zip file and make note of the password. You will use the zip file in the next step to define a SQL Developer connection to your Autonomous Data Warehouse database.
 -  Open SQL Developer on your local computer. In the Connections panel, right-click Connections and select New Connection.
- ![](./images/adwc9.png)
+
+   ![](./images/adwc9.png)
+   
 - The New/Select Database Connection dialog appears. Enter the following information.
   * Connection Name - Enter the name for this cloud connection.
   * Username - Enter the database username. Use the default administrator database account (admin) that is provided as part of the service.
@@ -141,31 +145,35 @@ Read on to begin your Getting Started journey with Oracle Autonomous Data Wareho
   * Connection Type - Select Cloud Wallet.
   * Configuration File - Click Browse, and select the Client Credentials zip file, downloaded from the Autonomous Data Warehouse service console by you, or given to you by your Autonomous Data Warehouse administrator.
   * Service - In the drop-down menu, service selections are prepended with database names. Select the low, medium, high, or parallel menu item for your database. These service levels map to the LOW, MEDIUM, HIGH, and PARALLEL consumer groups, which provide different levels of priority for your session.
- Note: Earlier versions of SQL Developer may not support this feature.             
- ![](./images/adw10.PNG) 
+ Note: Earlier versions of SQL Developer may not support this feature.
+ 
+   ![](./images/adw10.PNG) 
+   
 -  Click Test.
- ![](./images/adw101.PNG)
+
+   ![](./images/adw101.PNG)
+   
 Status: Success displays at the left-most bottom of the New/Select Database Connection dialog.
 - Click Connect to connect to your ADW instance . 
- ![](./images/adw102.PNG) 
+
+   ![](./images/adw102.PNG) 
+   
 Once the connection is established, a new SQL Workspace will open.
- ![](./images/adw104.PNG)
+
+   ![](./images/adw104.PNG)
 
 ### **STEP 4** : ADW Scaling 
 
 - To Scale Up or Scale Down your ADW instance, Go to your ADW instance in your console . 
-
 - Click on Scale Up/Down tab . 
 
- ![](./images/adw17.png)
+   ![](./images/adw17.png)
 
 - Once you click on this tab, you will be able to see below screen . 
 
- ![](./images/adw18.png)
+   ![](./images/adw18.png)
 
 - Increase or decrease the count as per your requirement and Click on " Update" to update the count . 
-
-
 
 ### **STEP 5** :  Data Loading
 
@@ -176,36 +184,41 @@ Once the connection is established, a new SQL Workspace will open.
 Unzip the zip file in your local machine.
 - Go to your Sql Developer (which is already connected to your ADW instance) .
 - On your right hand side , you will be able to "Tables" option . 
+  
   ![](./images/dataloading.png)
-  ![](./images/dataloading1.png)  
+  ![](./images/dataloading1.png)
+  
 - Right click on "Tables" option and Select "Import" option . 
+
   ![](./images/adw11.png)
+  
 - Once you click on "Import" button , you will be able to see below window . 
- ![](./images/channels.PNG)
+  
+  ![](./images/channels.PNG)
 
 - Click on Browse option and Browse the file from Local machine which you want to upload to ADW instance . 
 - Click on "Next" button . 
 - Once you click on "Next" button, you will be able to see below screen . 
 
- ![](./images/channels1.PNG)
+  ![](./images/channels1.PNG)
 
 - Give the table name as "Channels" and click on "Next" button . 
 - Once you click "Next" button, you will be able to see below screen . 
 
- ![](./images/channels2.PNG)
+  ![](./images/channels2.PNG)
 
 - Click Next
 
- ![](./images/channels3.PNG)
+  ![](./images/channels3.PNG)
 
 - You will be able to see below screen.
 - Click Next
 
- ![](./images/channels4.PNG)
+  ![](./images/channels4.PNG)
 
 - Check the summary and click on "Finish" button to Finish the data load process .
 
- ![](./images/channels5.PNG)
+  ![](./images/channels5.PNG)
 
 - Click on "OK". 
 - You will be able to see loaded data in your ADW instance now  . 
@@ -214,7 +227,7 @@ Unzip the zip file in your local machine.
 
 - To create ML(Machine Learning User), go to your ADW instance and click on "Service Console"
 
- ![](./images/adw21.PNG)
+  ![](./images/adw21.PNG)
  
 - Click on "Administration" Tab 
 
@@ -231,7 +244,7 @@ Unzip the zip file in your local machine.
 
 - Give Username , Email Address  and password.
 
-![](./images/adw43.PNG)
+  ![](./images/adw43.PNG)
 
 - Click on "Create" button on the top right side of your console to create ML user .
 
